@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>UniverSound</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/signup.css">
+	<script src="./scripts/script.js"></script>
+	<script src="https://kit.fontawesome.com/7aba373a63.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Young+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!--page header-->
+	<header>
+		<div class="title">
+			<div>
+				<div class="logo logo_header"></div>
+			</div>
+			<nav class="nav_profil">
+			</nav>
+		</div>
+	</header>
+	<!--middle page-->
+	<div class="big_box">
+		<main class="main">
+			<!-- creer le formulaire et les API google et facebook  -->
+			<h2>J'ai un compte UniverSound</h2>
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<hr>
+			<form action="/submit" method="post" class="field">
+				<label for="username">Adresse e-mail ou nom d'utilisateur</label>
+				<input type="text" id="username" name="username" required>
+
+				<label for="password">Mot de passe :</label>
+				<input type="password" id="password" name="password" required>
+
+				<label>
+					<input type="checkbox" name="remember" id="remember">
+					Se souvenir de moi
+				</label>
+
+				<button type="submit">Se Connecter</button>
+				<a href="#">Mot de passe oublié ?</a>
+			</form>
+		</main>
+	</div>
+	<!--page footer-->
+	<footer class="footer">
+		<nav class="nav_footer">
+			<hr>
+			<div class="logo logo_footer"></div>
+			<hr>
+			<ul class="RGPD box_footer">
+				<li>General Condition</li>
+				<li>Gestion des Cookies</li>
+				<li>Mentions légales</li>
+			</ul>
+			<hr>
+			<ul class="user box_footer">
+				<li>Profil</li>
+				<li>Last Sound</li>
+				<li>Playlist</li>
+			</ul>
+			<hr>
+			<ul class="contact box_footer">
+				<li>About Us</li>
+				<li>Contact</li>
+				<li>Inovation</li>
+			</ul>
+			<hr>
+		</nav>
+		<p>create By Team Sound for Holberton</p>
+	</footer>
+</body>
+</html>
