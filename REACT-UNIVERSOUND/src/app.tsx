@@ -5,7 +5,8 @@ import SongListHistoric from './pages/main/songPage/song-list-historic';
 import Footer from './components/footer/footer';
 import SearchBar from './components/main/search/search';
 import AsideBox from './pages/aside/asideBox';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Header from './components/header/header';
 /* Mise en place pour la version 3
 import SongLexicalFieldList from './pages/mainV3/song-lexical-field-list';
 import SongTypeList from './pages/mainV3/song-type-list';
@@ -23,18 +24,9 @@ const App: FunctionComponent = () => {
  return (
     <div className="App">
     <header>
-      <div className="title">
-        <div>
-          <a href=""><div className="logo logo_header"></div></a>
-        </div>
-        <nav className="nav_profil">
-          <ul className="nav_profil_ul">
-            <li><a href="./loader_page.html"><i className="fa-regular fa-user fa-lg">Account</i></a></li>
-            <li><a href="./signup.html"><i className="fa-solid fa-right-to-bracket fa-lg">Sign Up</i></a></li>
-            <li><a href="./sounds_page.html"><i className="fa-solid fa-right-to-bracket fa-lg">Standard</i></a></li>
-          </ul>
-        </nav>
-      </div>
+      <Router>
+        <Header />
+      </Router>
     </header>
     <div className="big_box">
       <AsideBox/>
