@@ -17,7 +17,7 @@ const App: FunctionComponent = () => {
     <header>
       <div className="title">
         <div>
-          <div className="logo logo_header"></div>
+          <a href=""><div className="logo logo_header"></div></a>
         </div>
         <nav className="nav_profil">
           <ul className="nav_profil_ul">
@@ -56,7 +56,7 @@ const App: FunctionComponent = () => {
     <footer className="footer">
       <nav className="nav_footer">
         <hr />
-        <div className="logo logo_footer"></div>
+        <a href=""><div className="logo logo_footer"></div></a>
         <hr />
         <ul className="RGPD box_footer">
           <li>General Condition</li>

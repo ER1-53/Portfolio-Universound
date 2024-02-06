@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>UniverSound</title>
 	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="./css/signup.css">
+	<link rel="stylesheet" href="./css/login.css">
 	<script src="./scripts/script.js"></script>
 	<script src="https://kit.fontawesome.com/7aba373a63.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,37 +25,27 @@
 	</header>
 	<!--middle page-->
 	<div class="big_box">
-		<main class="signBox">
-			<div class="decorateBox">
-				<h1 class="accroche">Profiter d'un large choix de titre audio de qualitée</h1>
-				
-			</div>
-			<div class="infosLog">
-				<h2>Create my Univers&nbsp;of&nbsp;Sound</h2>
-				<a href=""><h6>J'ai déjà un compte</h6></a>
-				<div class="g-signin2" data-onsuccess="onSignIn"></div>
-				<div class="g-signin2" data-onsuccess="onSignIn"></div>
-				<hr>
-				<form action="/submit" method="post" class="field" >
-					<label for="e-mail">Adresse e-mail :</label>
-					<input type="text" id="username" name="username" required placeholder="e-mail">
+		<main class="main">
+			<!-- creer le formulaire et les API google et facebook  -->
+			<h2>J'ai un compte UniverSound</h2>
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<div class="g-signin2" data-onsuccess="onSignIn"></div>
+			<hr>
+			<form action="/submit" method="post" class="field">
+				<label for="username">Adresse e-mail :</label>
+				<input type="text" id="username" name="username" required>
 
-					<label for="username">Nom :</label>
-					<input type="text" id="username" name="username" required placeholder="nom">
+				<label for="password">Mot de passe :</label>
+				<input type="password" id="password" name="password" required>
 
-					<label for="firstname">Prenom :</label>
-					<input type="text" id="username" name="username" required placeholder="prenom">
+				<label>
+					<input type="checkbox" name="remember" id="remember">
+					<p class="Remem">Se souvenir de moi</p>
+				</label>
 
-					<label for="password">Mot de passe :</label>
-					<input type="password" id="passwordSignUp" name="passwordSignUp" required placeholder="mot de passe">
-
-					<label for="password">Confirmation du Mot passe :</label>
-					<input type="password" id="passwordSignUp" name="passwordSignUp" required placeholder="mot de passe">
-
-
-					<button type="submit">créer un compte</button>
-				</form>
-			</div>
+				<button type="submit">Se Connecter</button>
+				<a href="#">Mot de passe oublié ?</a>
+			</form>
 		</main>
 	</div>
 	<!--page footer-->

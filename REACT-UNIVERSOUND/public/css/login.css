@@ -1,36 +1,8 @@
-body {
-    background-image: url('../images/waveV.jpg'),
-    url('../images/signupPict.jpg');
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-.signBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.decorateBox {
-    width: 40vw;
-    
-}
-.decorateBox > img {
-    height: 200vh;
-    height: 500px;
-    z-index: -10;
-}
-.accroche {
-    width: 350px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 70px;
-    text-align:inherit;
-}
-.infosLog {
+main {
     display: flex;
     flex-direction: column;
     background-color: black;
-    width: 40vw;
-    min-width: 600px;
+    width: 50vw;
     padding: 3rem 15% 3rem 15%;
     border-radius: 10px;
 
@@ -83,7 +55,6 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: bold;
-    margin-top: 20px;
 }
 
 button:hover {
