@@ -1,10 +1,18 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Song from './models/song';
 import SONGS from './models/mock-song';
-import SongListHistoric from './components/main/song-list-historic';
-/*import SongLexicalFieldList from './components/main/song-lexical-field-list';
-import SongTypeList from './components/main/song-type-list';
-import SongRhithmList from './components/main/song-rhithm-list';*/
+import SongListHistoric from './pages/main/songPage/song-list-historic';
+import Footer from './components/footer/footer';
+import SearchBar from './components/main/search/search';
+import AsideBox from './pages/aside/asideBox';
+import { Link } from 'react-router-dom';
+/* Mise en place pour la version 3
+import SongLexicalFieldList from './pages/mainV3/song-lexical-field-list';
+import SongTypeList from './pages/mainV3/song-type-list';
+import SongRhithmList from './pages/mainV3/song-rhithm-list';
+import SongListHistoric from './pages/mainV3/song-list-historic';
+SongListHistoric change sur une ligne de 5 elements en V3
+*/
   
 const App: FunctionComponent = () => {
     const [songs, setsongs] = useState<Song[]>([]);
@@ -29,54 +37,23 @@ const App: FunctionComponent = () => {
       </div>
     </header>
     <div className="big_box">
-      <aside className="aside">
-        <nav className="nav">
-          <ul className="nav_ul">
-            <li><i className="fa-solid fa-house-crack"></i> Home</li>
-            <li><i className="fa-regular fa-bookmark"></i> Library</li>
-            <li><i className="fa-solid fa-music"></i> Playlist</li>
-          </ul>
-          <div>
-            Place ici le system de chat
-          </div>
-        </nav>
-      </aside>
+      <AsideBox/>
       <main className="main">
         <div className="searchBox">
-          <form>
-              <input className="styledSearch searchField" type="search" id="site-search" name="request" />
-              <button className="styledSearch">Search</button>
-          </form>
+          <SearchBar />
         </div>
         <SongListHistoric />
         <section className="yourStyle">
+         {/*Mise en place pour la version 3
+         <SongLexicalFieldList />
+         <SongRhithmList />
+         <SongTypeList />
+         */}
         </section>
       </main>
     </div>
     <footer className="footer">
-      <nav className="nav_footer">
-        <hr />
-        <a href=""><div className="logo logo_footer"></div></a>
-        <hr />
-        <ul className="RGPD box_footer">
-          <li>General Condition</li>
-          <li>Gestion des Cookies</li>
-          <li>Mentions légales</li>
-        </ul>
-        <hr />
-        <ul className="user box_footer">
-          <li>Profil</li>
-          <li>Last Sound</li>
-          <li>Playlist</li>
-        </ul>
-        <hr />
-        <ul className="contact box_footer">
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Inovation</li>
-        </ul>
-        <hr />
-      </nav>
+      <Footer />
       <p>create By Team Sound for Holberton</p>
     </footer>
   </div>

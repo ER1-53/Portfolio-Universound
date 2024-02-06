@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
-import SONGS from "../../models/mock-song";
-import SongCover from "./coverbox/song-cover";
-import Song from "../../models/song";
+import SONGS from "../../../models/mock-song";
+import SongCover from "../../../components/main/coverBox/song-cover";
+import Song from "../../../models/song";
 
 const SongListHistoric: FunctionComponent = () => {
   const [songs, setSongs] = useState<Song[]>([]);
@@ -10,7 +10,7 @@ const SongListHistoric: FunctionComponent = () => {
     setSongs(SONGS);
   }, []);
 
-  const lastSongs = songs.slice(Math.max(songs.length - 5, 0));
+  const lastSongs = songs.slice(Math.max(songs.length - 10, 0));
 
   return (
     <section className="selection">

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
-import SONGS from "../../models/mock-song";
-import SongCover from "./coverbox/song-cover";
-import Song from "../../models/song";
+import SONGS from "../../../models/mock-song";
+import SongCover from "../../../components/main/coverBox/song-cover";
+import Song from "../../../models/song";
 
 const SongRhithmList: FunctionComponent = () => {
   const [songs, setSongs] = useState<Song[]>([]);
