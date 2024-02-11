@@ -1,55 +1,26 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
-import Song from './models/song';
-import SONGS from './models/mock-song';
-import SongListHistoric from './pages/main/songPage/song-list-historic';
-import Footer from './components/footer/footer';
-import SearchBar from './components/main/search/search';
-import AsideBox from './pages/aside/asideBox';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from './components/header/header';
-/* Mise en place pour la version 3
-import SongLexicalFieldList from './pages/mainV3/song-lexical-field-list';
-import SongTypeList from './pages/mainV3/song-type-list';
-import SongRhithmList from './pages/mainV3/song-rhithm-list';
-import SongListHistoric from './pages/mainV3/song-list-historic';
-SongListHistoric change sur une ligne de 5 elements en V3
-*/
-  
-const App: FunctionComponent = () => {
-    const [songs, setsongs] = useState<Song[]>([]);
+import React from 'react';
+import LandingPage from './pages/landingPage/landingPage';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 
-    useEffect(() => {
-        setsongs(SONGS);
-    }, []);
- return (
-    <div className="App">
-    <header>
-      <Router>
-        <Header />
-      </Router>
-    </header>
-    <div className="big_box">
-      <AsideBox/>
-      <main className="main">
-        <div className="searchBox">
-          <SearchBar />
-        </div>
-        <SongListHistoric />
-        <section className="yourStyle">
-         {/*Mise en place pour la version 3
-         <SongLexicalFieldList />
-         <SongRhithmList />
-         <SongTypeList />
-         */}
-        </section>
-      </main>
-    </div>
-    <footer className="footer">
-      <Footer />
-      <p>create By Team Sound for Holberton</p>
-    </footer>
-  </div>
- );
-}
-  
+import SoundPage from './pages/soundPage/soundPage';
+import SignUp from './pages/userLogPage/signuppage/signup';
+import LoginPage from './pages/userLogPage/loginpage/login';
+import PageNotFound from './pages/pageNotFound/pageNotFound';
+import Header from './components/header/headerLog';
+import styles from './app.module.css'
+
+const App = () => {
+  return (
+    <Router>
+            <Switch>
+                <Route exact path="/" component={LandingPage}/>
+                <Route path="/songpage" component={SoundPage}/>
+                <Route path="/signup" component={SignUp}/>
+                <Route path="/login" component={LoginPage}/>
+                <Route component={PageNotFound}/>
+            </Switch>
+    </Router>
+  );
+};
+
 export default App;

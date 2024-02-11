@@ -1,0 +1,44 @@
+/*Search bar*/
+.searchBox {
+	display: flex;
+	justify-content: center;
+ 	background-color: rgba(77, 26, 216, 0.13);
+	border: solid 2px var(--neon-blue);
+	box-shadow: 2px 2px 10px var(--neon-blue-shadow);
+	border-radius: 10px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.styledSearch {
+	border: 0;
+	line-height: 2.5;
+	padding: 0 20px;
+	font-size: 1rem;
+	text-align: center;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	border-radius: 10px;
+	background-color: rgb(22, 66, 133);
+	background-image: linear-gradient(
+	  to top left,
+	  rgb(0 0 0 / 20%),
+	  rgb(0 0 0 / 20%) 30%,
+	  rgb(0 0 0 / 0%)
+	);
+	box-shadow:
+	  inset 2px 2px 3px rgb(255 255 255 / 60%),
+	  inset -2px -2px 3px rgb(0 0 0 / 60%);
+  }
+  
+  .styledSearch:hover {
+	background-color: rgba(34, 17, 105, 0.76);
+  }
+  
+  .styledSearch:active {
+	box-shadow:
+	  inset -2px -2px 3px rgb(255 255 255 / 60%),
+	  inset 2px 2px 3px rgb(0 0 0 / 60%);
+  }
+  .searchField {
+	width: 20vw;
+  }

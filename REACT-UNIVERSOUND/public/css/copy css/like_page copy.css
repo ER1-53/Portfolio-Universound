@@ -1,0 +1,50 @@
+.likepics{
+	border-radius: 10px;
+	width: 75px;
+	height: 75px;
+}
+
+.elementlist{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.elementlist > p {
+	font-size: 24px;
+}
+
+.boxajout{
+border-radius: 50%;
+	width: 30px;
+	height: 30px;
+}
+
+.croix{
+	margin-left: 40px;
+	background-color: rgba(172, 132, 192, 0.612);
+	background-size: contain;
+	background-image: url(../images/croixOff.png);
+}
+
+.coeur{
+	background-color: rgba(130, 91, 150, 0.245);
+	background-size: contain;
+	background-image: url(../images/coeursOn.png);
+
+}
+
+.croix:hover{
+	background-color: rgb(255, 255, 255);
+	background-size: contain;
+	background-image: url(../images/croixOn.png);
+}
+
+.coeur:hover{
+	background-color: rgba(130, 91, 150, 0.245);
+	background-size: contain;
+	background-image: url(../images/coeursOff.png);
+
+}

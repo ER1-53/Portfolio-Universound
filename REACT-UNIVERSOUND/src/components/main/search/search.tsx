@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from './search.module.css'
 // supprime le commentaire est creer le lien avec la req search spotify
 
 const SearchBar: FunctionComponent = () => {
@@ -21,8 +22,8 @@ const SearchBar: FunctionComponent = () => {
     return (
         <div id="soundSearch">
         <form>
-            <input className="styledSearch searchField" id="site-search" type="search" value={search} onChange={e => setSearch(e.target.value)} />
-            <button className="styledSearch" onClick={SearchSong}>Rechercher</button>
+            <input className={styles.styledSearch + " " +styles.searchField} id="site-search" type="search" value={search} onChange={e => setSearch(e.target.value)} />
+            <button className={styles.styledSearch} onClick={SearchSong}>Rechercher</button>
         </form>
         {/*{results.map(track => (
             <div key={track.id}>
