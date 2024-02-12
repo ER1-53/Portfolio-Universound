@@ -1,15 +1,13 @@
 .logo {
     background-image: url('../../images/logov2Trans.png');
-	background-repeat: no-repeat;
-	background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 101px;
     width: 224px;
-	
 }
 .logo_header {
 	box-shadow:  inset -5px -5px 15px rgba(112, 112, 228, 0.5), 10px 1px 10px rgba(112, 112, 228, 0.5);
 }
-
 /* Header */
 .title {
     display: flex;
@@ -18,13 +16,11 @@
     padding: 1rem;
 	box-shadow: 0 0 10px var(--neon-purple-shadow);
 }
-
 .nav_profil {
     display: flex;
     align-items: center;
     width: 25%;
 }
-
 .nav_profil_ul {
     display: flex;
     padding: 0;

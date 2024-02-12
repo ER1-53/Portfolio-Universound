@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import SONGS from "../../../models/mock-song";
-import SongCover from "../../../components/main/coverBox/song-cover";
+import SongCover from "../../main/songPageBox/coverBox/song-cover";
 import Song from "../../../models/song";
 
 const SongLexicalFieldList: FunctionComponent = () => {
@@ -20,7 +20,7 @@ const SongLexicalFieldList: FunctionComponent = () => {
                 <SongCover key={song.id} song={song}/>
             ))}
          </nav>
-    </div>                 
+    </div>
   );
 }
 

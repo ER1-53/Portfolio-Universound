@@ -32,7 +32,7 @@
 	box-shadow: 0 0 10px var(--neon-purple-shadow);
 }
 .decorateBox {
-    width: 40vw; 
+    width: 40vw;
 }
 .decorateBox > img {
     height: 200vh;
@@ -61,13 +61,18 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
-
-h6:hover {
-    color: var(--neon-purple); 
+.infosLog h6 {
+    color:white ;
+}
+.infosLog h6:hover {
+    color: rgb(133, 89, 133);
 }
 .field {
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
 .g-signin2 {
@@ -78,11 +83,6 @@ h6:hover {
     border-radius: 5px;
     cursor: pointer;
     margin: 10px;
-}
-form {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -116,11 +116,9 @@ button {
     font-size: bold;
     margin-top: 20px;
     width: 150px;
-    
-}
 
+}
 button:hover {
     background-color: #fff;
-    
 }
 

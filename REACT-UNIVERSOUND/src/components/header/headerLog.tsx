@@ -4,7 +4,7 @@ import LogoHeader from "./logoheader";
 import LoginPage from "../../pages/userLogPage/loginpage/login";
 import SignUp from "../../pages/userLogPage/signuppage/signup";
 import styles from "./header.module.css"
- 
+
 
 const Header: FunctionComponent = () => {
 
@@ -20,5 +20,5 @@ const Header: FunctionComponent = () => {
             </div>
     );
 };
-          
+
 export default Header;

@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Song from '../../models/song';
 import SONGS from '../../models/mock-song';
-import SongListHistoric from '../../pages/main/songPage/song-list-historic';
+import SongListHistoric from '../../components/main/songPageBox/song-list-historic';
 import Footer from '../../components/footer/footer';
-import SearchBar from '../../components/main/search/search';
-import AsideBox from '../../pages/aside/asideBox';
+import SearchBar from '../../components/main/songPageBox/search/search';
+import AsideBox from '../../components/asideBox/asideBox';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from '../../components/header/headerLog';
 import LogoHeader from '../../components/header/logoheader';
@@ -16,7 +16,7 @@ import SongRhithmList from './pages/mainV3/song-rhithm-list';
 import SongListHistoric from './pages/mainV3/song-list-historic';
 SongListHistoric change sur une ligne de 5 elements en V3
 */
-  
+
 const SoundPage: FunctionComponent = () => {
     const [songs, setsongs] = useState<Song[]>([]);
 
@@ -24,10 +24,10 @@ const SoundPage: FunctionComponent = () => {
         setsongs(SONGS);
     }, []);
  return (
-    <div>
+    <div >
       <div className={styles.title}>
           <LogoHeader />
-      </div>
+      </div >
     <div className={styles.big_box}>
       <AsideBox/>
       <main className={styles.main}>
@@ -48,5 +48,5 @@ const SoundPage: FunctionComponent = () => {
   </div>
  );
 }
-  
+
 export default SoundPage;

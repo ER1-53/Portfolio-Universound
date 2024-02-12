@@ -1,7 +1,8 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import SONGS from "../../../models/mock-song";
-import SongCover from "../../../components/main/coverBox/song-cover";
+import SongCover from "./coverBox/song-cover";
 import Song from "../../../models/song";
+import styles from './songList.module.css'
 
 const SongListHistoric: FunctionComponent = () => {
   const [songs, setSongs] = useState<Song[]>([]);
@@ -13,14 +14,14 @@ const SongListHistoric: FunctionComponent = () => {
   const lastSongs = songs.slice(Math.max(songs.length - 10, 0));
 
   return (
-    <section className="selection">
-      <header className="title_box"><h3>Your Sound</h3></header>
-      <nav className="nav_sounds_selection">
+    <section className={styles.selection}>
+      <header className={styles.titleBox}><h3>Your Sound</h3></header>
+      <nav className={styles.nav_sounds_selection}>
         {lastSongs.map(song => (
                 <SongCover key={song.id} song={song}/>
             ))}
-       </nav>
-    </section>                                    
+      </nav>
+    </section>
   );
 }
 

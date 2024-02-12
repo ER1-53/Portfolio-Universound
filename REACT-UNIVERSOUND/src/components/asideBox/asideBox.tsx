@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from "react";
-import AsideMenu from "../../components/aside/asideMenu";
+import AsideMenu from "./asideNav/asideMenu";
+import styles from './asideBox.module.css'
 
 const AsideBox: FunctionComponent = () => {
-    
+
     return (
-        <aside className="aside">
-        <nav className="nav">
+        <aside className={styles.aside}>
+        <nav className={styles.nav}>
             <AsideMenu />
           <div>
             {/*<ChatBox /> mise en place pour la version 2*/}

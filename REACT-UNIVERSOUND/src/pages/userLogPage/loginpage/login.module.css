@@ -29,11 +29,11 @@ h2 {
     cursor: pointer;
     margin: 10px;
 }
-form {
+.field {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 97);
-    
+
 }
 .title {
     display: flex;
@@ -76,4 +76,14 @@ button:hover {
 .buttonSubmit {
     display: flex;
     justify-content: center;
+}
+.field a {
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    text-align: center;
+    margin-top: 3px;
+}
+.field a:hover {
+    color: rgb(133, 89, 133);
 }

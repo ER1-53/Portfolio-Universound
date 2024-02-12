@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import Header from '../../components/header/headerLog';
 import Footer from '../../components/footer/footer';
-import AsideBox from '../../pages/aside/asideBox';
+import AsideBox from '../../components/asideBox/asideBox';
 import {  Link } from 'react-router-dom';
 import styles from "./landingPage.module.css"
 
 
 const LandingPage: FunctionComponent = () => {
   return (
-    
+
     <div>
       <div>
           <Header />
@@ -35,12 +35,12 @@ const LandingPage: FunctionComponent = () => {
           </section></Link>
         </main>
       </div>
-      
+
         <Footer />
-        
-      
+
+
     </div>
-       
+
   );
 };
 

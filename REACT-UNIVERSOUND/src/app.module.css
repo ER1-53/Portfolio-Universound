@@ -25,13 +25,6 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, black,  #1a1a1a, #292929, #1a1a1a, black);
-    
-}
-ul {
-    list-style: none;
 }
 
-a { 
-    text-decoration: none;
-    color: white;
-}
+

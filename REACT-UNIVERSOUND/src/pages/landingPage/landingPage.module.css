@@ -1,3 +1,40 @@
+:root {
+    --neon-blue: #00bfff9f;
+    --neon-purple: #892be293;
+	--backg-dark: #000000;
+    --neon-blue-shadow: rgba(0, 102, 255, 0.5);
+    --neon-purple-shadow: rgba(138, 43, 226, 0.5);
+    --creamy: rgb(218, 197, 171);
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General page custom */
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, black,  #1a1a1a, #292929, #1a1a1a, black);
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.877),
+    rgba(0, 0, 0, 0.63)
+    ),url(../../images/waveC.jpg)no-repeat;background-size:cover;
+}
+ul {
+    list-style: none;
+}
+
+
 .big_box {
 	color:azure;
     display: flex;
@@ -28,7 +65,8 @@
 	border-radius: 10px;
 	text-align: center;
 	box-shadow: 5px 2px 10px rgba(0, 102, 255, 0.5);
-    transition: transform 0.5s ease-in-out;	
+    transition: transform 0.5s ease-in-out;
+
 }
 .box_info:hover {
     transform: scale(1.1);
@@ -36,6 +74,7 @@
 /*title box*/
 .box_info h2 {
 	font-family:'Young Serif', 'Courier New', Courier, monospace;
+
 }
 /*images integration*/
 .image_info1 {

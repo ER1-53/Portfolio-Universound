@@ -10,8 +10,6 @@ const AsideMenu: FunctionComponent = () => {
 
     return (
         <Router>
-            <aside className={styles.aside}>
-			<nav className={styles.nav}>
             <ul className={styles.nav_ul}>
                 <li>
                     <Link to="/" className={styles.nav_link}>
@@ -29,8 +27,6 @@ const AsideMenu: FunctionComponent = () => {
                     </Link>
                 </li>
             </ul>
-            </nav>
-            </aside>
 
             <Route path="/" exact component={Home} />
             <Route path="/library/" component={Library} />
