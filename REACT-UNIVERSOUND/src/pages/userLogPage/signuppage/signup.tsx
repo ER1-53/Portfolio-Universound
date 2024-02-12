@@ -78,7 +78,6 @@ const SignUp: React.FC<SignupProps> = ({ handleSignup }) => {
           </div>
         </main>
       </div>
-        <Footer />
     </div>
   );
 };

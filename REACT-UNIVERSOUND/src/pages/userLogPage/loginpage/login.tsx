@@ -67,9 +67,6 @@ const LoginPage: React.FC<LoginProps> = ({ handleLogin }) => {
           </LoginSocialGoogle>
         </main>
       </div>
-      <div>
-        <Footer />
-      </div>
     </div>
   );
 };

@@ -10,13 +10,13 @@
 	color:azure;
     display: flex;
     justify-content: center;
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 250px);
     height: auto;
     background-image: url('');
     background-repeat: no-repeat;
     background-size: cover;
 	margin-top: 30px;
-    margin-bottom: 30px;
+    padding-bottom: 20px;
 }
 .signBox {
     display: flex;

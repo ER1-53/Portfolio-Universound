@@ -5,7 +5,6 @@ import styles from './footer.module.css'
 const Footer: FunctionComponent = () => {
     
     return (
-        <Router>
             <footer className={styles.footer}>
             <nav className={styles.nav_footer}>
                 <hr />
@@ -32,7 +31,6 @@ const Footer: FunctionComponent = () => {
             </nav>
                 <p>create By Team Sound for Holberton</p>
             </footer>
-        </Router>
     );
 }
 

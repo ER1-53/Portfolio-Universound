@@ -3,7 +3,7 @@ import Song from './models/song';
 import SONGS from './models/mock-song';
 import SongListHistoric from './components/main/songPageBox/song-list-historic';
 import Footer from './components/footer/footer';
-import SearchBar from './components/main/songPageBox/search/search';
+import SearchBar from './components/main/search/search';
 import AsideBox from './components/asideBox/asideBox';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Header from './components/header/headerLog';

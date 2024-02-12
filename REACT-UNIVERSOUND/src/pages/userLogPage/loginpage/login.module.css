@@ -7,8 +7,8 @@
     background-image: url('');
     background-repeat: no-repeat;
     background-size: cover;
-	margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-bottom: 20px;
 }
 
 h2 {

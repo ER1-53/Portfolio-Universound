@@ -5,17 +5,17 @@ import Footer from '../../components/footer/footer';
 import SearchBar from '../../components/main/search/search';
 import AsideBox from '../../components/asideBox/asideBox';
 import LogoHeader from '../../components/header/logoheader';
-import styles from './likePage.module.css'
-import ListBox from '../../components/main/likepageBox/listBox';
+import styles from './playlist.module.css'
+import PlaylistBox from '../../components/main/playlistBox/playlistBox';
 
 
-const LikePage: FunctionComponent = () => {
+const Playlist: FunctionComponent = () => {
     const [songs, setsongs] = useState<Song[]>([]);
 
     useEffect(() => {
         setsongs(SONGS);
     }, []);
-
+    
  return (
     <div >
       <div className={styles.title}>
@@ -27,7 +27,7 @@ const LikePage: FunctionComponent = () => {
         <div className={styles.searchBox}>
           <SearchBar />
         </div>
-        <ListBox />
+        <PlaylistBox />
       </main>
     </div>
       <Footer />
@@ -35,4 +35,4 @@ const LikePage: FunctionComponent = () => {
  );
 }
 
-export default LikePage;
+export default Playlist;

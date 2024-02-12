@@ -3,6 +3,7 @@ export default class Song {
     id: number;
     track: string;
     album: string;
+    artiste: string;
     time: number;
     picture: string;
     video: string;
@@ -15,6 +16,7 @@ export default class Song {
      id: number,
      track: string = 'track',
      album: string = 'album',
+     artiste: string = 'artiste',
      time: number = 200,
      picture: string = 'http://...',
      video: string = 'http://...',
@@ -25,6 +27,7 @@ export default class Song {
      this.id = id;
      this.track = track;
      this.album = album;
+     this.artiste = artiste;
      this.time = time;
      this.picture = picture;
      this.video = video;

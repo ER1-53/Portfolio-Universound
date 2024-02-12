@@ -5,8 +5,11 @@ import SoundPage from './pages/soundPage/soundPage';
 import SignUp from './pages/userLogPage/signuppage/signup';
 import LoginPage from './pages/userLogPage/loginpage/login';
 import PageNotFound from './pages/pageNotFound/pageNotFound';
+import LikePage from './pages/likePage/likePage';
+import Playlist from './pages/playlist/playlist';
 import Header from './components/header/headerLog';
 import styles from './app.module.css'
+import AsideMenu from './components/asideBox/asideNav/asideMenu';
 
 const App = () => {
   return (
@@ -16,6 +19,8 @@ const App = () => {
                 <Route path="/songpage" component={SoundPage}/>
                 <Route path="/signup" component={SignUp}/>
                 <Route path="/login" component={LoginPage}/>
+                <Route path="/likePage" component={LikePage}/>
+                <Route path="/playlist" component={Playlist}/>
                 <Route component={PageNotFound}/>
             </Switch>
     </Router>
