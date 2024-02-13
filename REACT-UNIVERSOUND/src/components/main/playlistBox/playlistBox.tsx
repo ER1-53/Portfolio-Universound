@@ -33,6 +33,7 @@ const PlaylistBox: FunctionComponent = () => {
           <h6>Créer une nouvelle Playlist</h6>
           <div className={styles.boxajout + " " + styles.croix}></div>
         </div>
+        <div className={styles.tablePlaylist}>
         {playlists.map((playlist, index) => (
           <details key={index}>
             <div className={styles.ajoutSong + " " + styles.boxajout + " " + styles.croix} onClick={handleAddSong}></div>
@@ -42,6 +43,7 @@ const PlaylistBox: FunctionComponent = () => {
             ))}
           </details>
         ))}
+        </div>
       </section>
     </div>
   );
