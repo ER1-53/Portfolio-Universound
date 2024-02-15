@@ -1,0 +1,13 @@
+.controlTime {
+    margin-left: 20px;
+}
+.timeBarProgress {
+    display: flex;
+    justify-content: space-between;
+}
+.slider {
+    margin: 0;
+}
+.icons {
+    color: black;
+}

@@ -1,0 +1,53 @@
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+	margin-top: auto;
+    border-top: 2px solid var(--neon-purple);
+    padding: 1rem;
+	box-shadow: 0 0 10px var(--neon-purple-shadow);
+}
+
+.nav_footer {
+    display: flex;
+    width: 100%;
+    color: azure;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+	box-shadow: 0 0 10px var(--neon-purple-shadow);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .box_footer {
+    padding: 0;
+}
+
+.footer p {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 1px;
+	box-shadow: 0 -5px  10px var(--neon-purple-shadow);
+	font-size: 10px;
+}
+.footer ul {
+	text-align: center;
+
+}
+
+.logo {
+    background-image: url('../../images/logov2Trans.png');
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 101px;
+    width: 224px;
+}
+
+.box_footer a {
+
+    color: white;
+}
+a {
+    text-decoration: none;
+}

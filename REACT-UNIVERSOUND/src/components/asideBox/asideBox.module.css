@@ -1,0 +1,21 @@
+/* Aside */
+.aside {
+    width: 13rem;
+	border: solid 2px var(--neon-blue);
+	box-shadow: 2px 2px 10px var(--neon-blue-shadow);
+	border-radius: 10px;
+	height: 70vh;
+    text-align: center;
+}
+
+.nav {
+    height: 100%;
+}
+
+.nav_ul {
+    padding: 0;
+    margin: 0;
+    height: 200px;
+
+}
+

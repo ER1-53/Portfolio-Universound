@@ -1,0 +1,23 @@
+/* selection screen*/
+.selection {
+	border: 2px solid ;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 30px;
+	border: solid 2px var(--neon-blue);
+	box-shadow: 2px 2px 10px var(--neon-blue-shadow);
+	flex-wrap: wrap;
+	max-width: 1000px
+}
+.selection h2 {
+	margin-left: 25px;
+
+}
+.nav_sounds_selection {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.titleBox {
+	text-align: center;
+}

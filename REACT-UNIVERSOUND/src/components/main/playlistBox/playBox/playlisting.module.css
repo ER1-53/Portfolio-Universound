@@ -1,0 +1,25 @@
+.likepics{
+	border-radius: 10px;
+	width: 75px;
+	height: 75px;
+    margin-right: 20px;
+}
+
+.elementlist{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.elementlist > p {
+	font-size: 16px;
+    margin: 20px;
+}
+
+.elementlist strong {
+    font-size: 10px;
+}
+
+
+
