@@ -12,7 +12,7 @@ const SongCover: FunctionComponent<Props> = ({song}) => {
             <div className={styles.SoundBox}>
             <div className={styles.jacket_box}>
                 <img src={song.picture} alt="" className={styles.jacket} />
-                <img src="images/play-151523_640.png" alt="" className={styles.player} />
+                <img src="/cover/play-151523_640.png" alt="" className={styles.player} />
                 <header>
                 <h4>{song.track}</h4>
                 <p>{song.album}</p>

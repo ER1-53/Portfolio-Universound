@@ -5,6 +5,7 @@ import SearchBar from '../../components/main/search/search';
 import AsideBox from '../../components/asideBox/asideBox';
 import LogoHeader from '../../components/header/logoheader';
 import styles from './soundPage.module.css'
+import AudioPlayer from '../../components/player/audioplayer';
 /* Mise en place pour la version 3
 import SongLexicalFieldList from './pages/mainV3/song-lexical-field-list';
 import SongTypeList from './pages/mainV3/song-type-list';
@@ -36,7 +37,9 @@ const SoundPage: FunctionComponent = () => {
         </section>
       </main>
     </div>
-      <Footer />
+    <div className={styles.fixedSong}>
+    <AudioPlayer />
+    </div>
   </div>
  );
 }

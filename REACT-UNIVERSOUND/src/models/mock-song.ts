@@ -8,7 +8,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Autonomic - Valante.wav",
   time: 125,
-  picture: '../../images/valante.jpg',
+  picture: '../../cover/valante.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Rock", "Pop"],
 
@@ -21,7 +21,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Dark Utopia.wav",
   time: 125,
-  picture: '../../images/Dark Utopia.jpg',
+  picture: '../../cover/Dark Utopia.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Rap"],
   
@@ -33,7 +33,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Devil's Disgrace - Deskant.wav",
   time: 125,
-  picture: "../../images/Devil's Disgrace.jpg",
+  picture: "../../cover/Devil's Disgrace.jpg",
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Electro"],
  
@@ -45,7 +45,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Diner Dreams.wav",
   time: 142,
-  picture: '../../images/Diner Dreams.jpg',
+  picture: '../../cover/Diner Dreams.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Electro", "hardRock"],
  
@@ -57,7 +57,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Diner Dreams.wav",
   time: 136,
-  picture: '../../images/Infinity and Beyond.jpg',
+  picture: '../../cover/Infinity and Beyond.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["funk", "dance"],
   
@@ -69,7 +69,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Dark Utopia.wav",
   time: 134,
-  picture: '../../images/valante.jpg',
+  picture: '../../cover/valante.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Blues"],
  
@@ -81,7 +81,7 @@ export const SONGS: Song[] = [
   artiste: "DOudou",
   music: "../../song/ES_Dark Utopia.wav",
   time: 112,
-  picture: '../../images/valante.jpg',
+  picture: '../../cover/Infinity and Beyond.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Classique", "Country"],
  
@@ -93,7 +93,7 @@ export const SONGS: Song[] = [
   artiste: "Chouchou",
   music: "../../song/ES_Dark Utopia.wav",
   time: 115,
-  picture: '../../images/valante.jpg',
+  picture: '../../cover/Diner Dreams.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Hip-hop"],
   
@@ -105,7 +105,7 @@ export const SONGS: Song[] = [
   artiste: "Francis",
   music: "../../song/ES_Dark Utopia.wav",
   time: 127,
-  picture: '../../images/valante.jpg',
+  picture: '../../cover/valante.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Jazz"],
   
@@ -117,7 +117,7 @@ export const SONGS: Song[] = [
   artiste: "Joe Dido",
   music: "../../song/ES_Dark Utopia.wav",
   time: 185,
-  picture: '../../images/valante.jpg',
+  picture: '../../cover/valante.jpg',
   video: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-voices-design-template-abe7b5b1ab824b3e577c02c7ae6d544d.mp4?ts=1686686545",
   types: ["Reggae"],
   

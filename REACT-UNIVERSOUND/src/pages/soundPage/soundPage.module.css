@@ -71,3 +71,9 @@
     padding: 1rem;
 	box-shadow: 0 0 10px var(--neon-purple-shadow);
 }
+.fixedSong {
+	position: fixed;
+	z-index: 99;
+	bottom: 0;
+	width: 100%;
+}
