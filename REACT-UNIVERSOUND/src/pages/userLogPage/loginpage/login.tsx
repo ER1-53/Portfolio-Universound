@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { GoogleLoginButton } from 'react-social-login-buttons';
 import { LoginSocialGoogle, IResolveParams  } from 'reactjs-social-login';
-import Footer from '../../../components/footer/footer';
 import LogoHeader from '../../../components/header/logoheader';
 import styles from './login.module.css'
-import Header from '../../../components/header/headerLog';
 import { Link } from 'react-router-dom';
 
 interface LoginProps {

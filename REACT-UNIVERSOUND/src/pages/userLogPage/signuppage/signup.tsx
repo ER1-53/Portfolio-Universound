@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import LogoHeader from '../../../components/header/logoheader';
-import Footer from '../../../components/footer/footer';
 import { GoogleLoginButton } from 'react-social-login-buttons';
 import { LoginSocialGoogle, IResolveParams } from 'reactjs-social-login';
 import styles from './signup.module.css'

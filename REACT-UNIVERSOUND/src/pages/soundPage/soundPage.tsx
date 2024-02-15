@@ -1,12 +1,8 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
-import Song from '../../models/song';
-import SONGS from '../../models/mock-song';
+import React, { FunctionComponent } from 'react';
 import SongListHistoric from '../../components/main/songPageBox/song-list-historic';
 import Footer from '../../components/footer/footer';
 import SearchBar from '../../components/main/search/search';
 import AsideBox from '../../components/asideBox/asideBox';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from '../../components/header/headerLog';
 import LogoHeader from '../../components/header/logoheader';
 import styles from './soundPage.module.css'
 /* Mise en place pour la version 3
@@ -18,11 +14,7 @@ SongListHistoric change sur une ligne de 5 elements en V3
 */
 
 const SoundPage: FunctionComponent = () => {
-    const [songs, setsongs] = useState<Song[]>([]);
-
-    useEffect(() => {
-        setsongs(SONGS);
-    }, []);
+    
  return (
     <div >
       <div className={styles.title}>

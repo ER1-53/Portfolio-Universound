@@ -1,15 +1,13 @@
 import React from 'react';
 import LandingPage from './pages/landingPage/landingPage';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import SoundPage from './pages/soundPage/soundPage';
 import SignUp from './pages/userLogPage/signuppage/signup';
 import LoginPage from './pages/userLogPage/loginpage/login';
 import PageNotFound from './pages/pageNotFound/pageNotFound';
 import LikePage from './pages/likePage/likePage';
 import Playlist from './pages/playlist/playlist';
-import Header from './components/header/headerLog';
-import styles from './app.module.css'
-import AsideMenu from './components/asideBox/asideNav/asideMenu';
+
 
 const App = () => {
   return (

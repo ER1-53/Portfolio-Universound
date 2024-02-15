@@ -1,6 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
-import Song from '../../models/song';
-import SONGS from '../../models/mock-song';
+import React, { FunctionComponent } from 'react';
 import Footer from '../../components/footer/footer';
 import SearchBar from '../../components/main/search/search';
 import AsideBox from '../../components/asideBox/asideBox';
@@ -10,12 +8,7 @@ import PlaylistBox from '../../components/main/playlistBox/playlistBox';
 
 
 const Playlist: FunctionComponent = () => {
-    const [songs, setsongs] = useState<Song[]>([]);
 
-    useEffect(() => {
-        setsongs(SONGS);
-    }, []);
-    
  return (
     <div >
       <div className={styles.title}>

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import axios from 'axios';
 import styles from './search.module.css'
 // supprime le commentaire est creer le lien avec la req search spotify

@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LogoHeader from "./logoheader";
-import LoginPage from "../../pages/userLogPage/loginpage/login";
-import SignUp from "../../pages/userLogPage/signuppage/signup";
 import styles from "./header.module.css"
 
 

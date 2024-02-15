@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import Header from '../../components/header/headerLog';
 import Footer from '../../components/footer/footer';
-import AsideBox from '../../components/asideBox/asideBox';
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from "./landingPage.module.css"
 
 
