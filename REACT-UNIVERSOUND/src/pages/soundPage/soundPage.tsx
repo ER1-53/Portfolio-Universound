@@ -15,7 +15,7 @@ SongListHistoric change sur une ligne de 5 elements en V3
 */
 
 const SoundPage: FunctionComponent = () => {
-    
+
  return (
     <div >
       <div className={styles.title}>
@@ -38,7 +38,7 @@ const SoundPage: FunctionComponent = () => {
       </main>
     </div>
     <div className={styles.fixedSong}>
-    <AudioPlayer />
+      <AudioPlayer />
     </div>
   </div>
  );
