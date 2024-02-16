@@ -1,7 +1,7 @@
 {
     "name": "REACT-UNIVERSOUND",
     "version": "1.0.0",
-    "description": "An awesome application to handle some pokemons.",
+    "description": "An awesome application to handle .",
     "dependencies": {
         "@types/node": "12.11.1",
         "@types/react": "16.9.9",
