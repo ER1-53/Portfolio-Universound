@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import SongListHistoric from '../../components/main/songPageBox/song-list-historic';
-import Footer from '../../components/footer/footer';
 import SearchBar from '../../components/main/search/search';
 import AsideBox from '../../components/asideBox/asideBox';
 import LogoHeader from '../../components/header/logoheader';

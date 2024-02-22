@@ -1,4 +1,4 @@
-import playlist from '../playlist/playlist';
+import SONGS from '../../models/mock-song';
 import Controls from './controls';
 import ProgressBar from './progressbar';
 import SongInfo from './song-info';
@@ -15,7 +15,7 @@ const AudioPlayer = () => {
     toggleRepeat,
     toggleShuffle,
     setPlaybackPosition,
-  } = useAudioPlayer(playlist);
+  } = useAudioPlayer(SONGS);
 
   const {
     repeat,
@@ -74,6 +74,7 @@ const AudioPlayer = () => {
         progress={computeProgress()}
       />
       </div>
+      <div className={styles.heart}></div>
     </div>
   );
 };

@@ -29,27 +29,27 @@ border-radius: 50%;
 
 .croix{
 	margin-left: 40px;
-	background-color: rgba(172, 132, 192, 0.612);
+	
 	background-size: contain;
-	background-image: url(../../../../images/croixOff.png);
+	background-image: url(../../../../images/playlist_add_circle_FILL0_wght400_GRAD0_opsz24.png);
 }
 
 .coeur{
-	background-color: rgba(130, 91, 150, 0.245);
+	
 	background-size: contain;
-	background-image: url(../../../../images/coeursOn.png);
+	background-image: url(../../../../images/heart_minus_FILL0_wght400_GRAD0_opsz24.png);
 
 }
 
 .croix:hover{
-	background-color: rgb(255, 255, 255);
+	
 	background-size: contain;
-	background-image: url(../../../../images/croixOn.png);
+	background-image: url(../../../../images/playlist_add_check_circle_FILL0_wght400_GRAD0_opsz24.png);
 }
 
 .coeur:hover{
-	background-color: rgba(130, 91, 150, 0.245);
+	
 	background-size: contain;
-	background-image: url(../../../../images/coeursOff.png);
+	background-image: url(../../../../images/relax_FILL0_wght400_GRAD0_opsz24.png);
 
 }

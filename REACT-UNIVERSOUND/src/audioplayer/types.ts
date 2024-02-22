@@ -1,7 +1,8 @@
 /* === Playlist & Track === */
-export type Playlist = Array<Track>;
+export type Song = Array<Track>;
 
 export type Track = {
+  id: number;
   audioSrc: string;
   metadata: TrackMetadata;
 };
@@ -10,6 +11,8 @@ export type TrackMetadata = {
   artist: string;
   title: string;
   coverArtSrc: string;
+  album: string;
+  types: Array<string>;
 };
 
 /* === Controls === */

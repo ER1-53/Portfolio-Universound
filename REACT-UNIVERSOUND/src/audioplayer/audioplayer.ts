@@ -3,12 +3,12 @@ import {
   Controls,
   PlaybackState,
   PlayerState,
-  Playlist,
+  Song,
   TrackMetadata,
 } from './types';
 
 export function createAudioplayer(
-  playlist: Playlist,
+  SONGS: Song,
   onStateChange: (state: PlayerState) => void,
 ): Controls {
   let currentTrackIndex = 0;
@@ -36,8 +36,8 @@ export function createAudioplayer(
   }
 
   function getCurrentTrackMetadata(): TrackMetadata | null {
-    if (currentTrackIndex < playlist.length) {
-      return playlist[currentTrackIndex].metadata;
+    if (currentTrackIndex < SONGS.length) {
+      return SONGS[currentTrackIndex].metadata;
     } else {
       return null;
     }
@@ -92,7 +92,7 @@ export function createAudioplayer(
   }
 
   function loadTrack(index: number) {
-    audioElement.src = playlist[index].audioSrc;
+    audioElement.src = SONGS[index].audioSrc;
     audioElement.load();
     currentTrackIndex = index;
   }
@@ -102,13 +102,13 @@ export function createAudioplayer(
   }
 
   function computeSubsequentTrackIndex(): number {
-    return (currentTrackIndex + 1) % playlist.length;
+    return (currentTrackIndex + 1) % SONGS.length;
   }
 
   function computeRandomTrackIndex(): number {
-  if (playlist && playlist.length === 1) return 0;
-  const index = playlist ? Math.floor(Math.random() * (playlist.length - 1)) : 0;
-  return playlist && index < currentTrackIndex ? index : index + 1;
+  if (SONGS && SONGS.length === 1) return 0;
+  const index = SONGS ? Math.floor(Math.random() * (SONGS.length - 1)) : 0;
+  return SONGS && index < currentTrackIndex ? index : index + 1;
 }
   //#endregion
 

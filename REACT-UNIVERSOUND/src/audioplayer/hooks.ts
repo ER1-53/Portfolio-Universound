@@ -1,24 +1,24 @@
 import { useState, useRef, useEffect } from 'react';
-import { Controls, InitialPlayerState, PlayerState, Playlist } from './types';
+import { Controls, InitialPlayerState, PlayerState, Song } from './types';
 import { createAudioplayer } from './audioplayer';
 
 interface AudioPlayer extends Controls {
   playerState: PlayerState;
 }
 
-function useAudioPlayer(playlist: Playlist): AudioPlayer {
+function useAudioPlayer(SONGS: Song): AudioPlayer {
   const [playerState, setPlayerState] = useState<PlayerState>(InitialPlayerState);
   const playerRef = useRef<Controls | null>(null);
 
   useEffect(() => {
-    const newPlayer = createAudioplayer(playlist, setPlayerState);
+    const newPlayer = createAudioplayer(SONGS, setPlayerState);
     playerRef.current = newPlayer;
     return () => {
       if (newPlayer) {
         newPlayer.cleanup();
       }
     };
-  }, [playlist]);
+  }, [SONGS]);
 
   function setPlaybackPosition(position: number) {
     if (playerRef.current) {
