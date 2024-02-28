@@ -29,3 +29,6 @@ npm install sequelize mysql2
 Pour utiliser les connect DB en .env
 npm install dotenv
 
+redémarrer mysql
+sudo systemctl restart mysql
+

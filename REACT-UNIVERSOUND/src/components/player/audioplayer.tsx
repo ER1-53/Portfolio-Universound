@@ -43,11 +43,13 @@ const AudioPlayer = () => {
       return (currentTrackPlaybackPosition / currentTrackDuration) * 100;
     }
   }
+  
   const isPlaying = playbackState === 'PLAYING';
+
   return (
     <div className={styles.playBox}>
       <div className={styles.songInfo}>
-      <SongInfo 
+      <SongInfo
       title={currentTrackMetadata ? currentTrackMetadata.title : undefined}
       artist={currentTrackMetadata ? currentTrackMetadata.artist : undefined}
       coverArtSrc={currentTrackMetadata ? currentTrackMetadata.coverArtSrc : undefined}

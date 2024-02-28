@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import { useState } from 'react';
 
 // Composant pour ajouter des amis
 const AddFriend = ({ onAdd }) => {
@@ -38,8 +38,8 @@ const ChatApp = () => {
       <h1>Chat App</h1>
       <AddFriend onAdd={handleAddFriend} />
       <FriendList friends={friends} />
-      {/* Ici, vous pouvez ajouter d'autres composants, comme un composant pour afficher les messages du chat */}
-    </div>
+      {/* Ici, vous pouvez ajouter d'autres composants, comme un composant pour afficher les messages du chat */
+    /*</div>
   );
 };
 
@@ -60,4 +60,4 @@ const ChatBox = ({ messages }) => (
   </div>
 );
 
-export default ChatBox;
+export default ChatBox;*/

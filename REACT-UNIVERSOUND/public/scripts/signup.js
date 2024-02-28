@@ -6,7 +6,7 @@ function onSignIn(googleUser) {
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
-    
+
     // Vous pouvez ajouter ici le code pour gérer l'authentification côté client
     // ou envoyer les informations de connexion au serveur pour une authentification côté serveur.
 }

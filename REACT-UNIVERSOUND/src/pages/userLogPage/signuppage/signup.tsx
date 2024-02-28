@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import LogoHeader from '../../../components/header/logoheader';
 import { GoogleLoginButton } from 'react-social-login-buttons';
 import { LoginSocialGoogle, IResolveParams } from 'reactjs-social-login';
@@ -10,7 +10,7 @@ interface SignupProps {
   handleSignup: (username: string, password: string, email: string) => void;
 }
 
-const SignUp: React.FC<SignupProps> = ({ handleSignup }) => {
+const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -44,7 +44,7 @@ const SignUp: React.FC<SignupProps> = ({ handleSignup }) => {
           <div className={styles.infosLog}>
             <h2>Create my Univers of Sound</h2>
             <Link to="/login"><h6>J'ai déjà un compte ...</h6></Link>
-              
+
             <hr />
             <form action="/submit" method="post" className={styles.field} onSubmit={handleSubmit}>
               <label htmlFor="e-mail">Adresse e-mail :</label>
