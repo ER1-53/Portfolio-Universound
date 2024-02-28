@@ -6,7 +6,7 @@ const LogoHeader: FunctionComponent = () => {
 
     return (
             <div>
-                <Link to="/"><div className={styles.logo + " " + styles.logo_header}></div></Link>
+                <div className={styles.logo + " " + styles.logo_header}></div>
             </div>
     );
 };

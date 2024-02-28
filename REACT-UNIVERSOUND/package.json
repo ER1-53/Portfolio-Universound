@@ -1,20 +1,27 @@
 {
     "name": "REACT-UNIVERSOUND",
     "version": "1.0.0",
-    "description": "An awesome application to handle some pokemons.",
+    "description": "An awesome application to handle .",
     "dependencies": {
         "@types/node": "12.11.1",
         "@types/react": "16.9.9",
         "@types/react-dom": "16.9.2",
         "@types/react-router-dom": "^5.1.2",
         "axios": "^1.6.7",
+        "dotenv": "^16.4.4",
+        "express": "^4.18.2",
+        "mysql": "^2.18.1",
+        "mysql2": "^3.9.1",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
+        "react-player": "^2.14.1",
         "react-router-dom": "^5.1.2",
         "react-scripts": "^4.0.0",
         "react-social-login-buttons": "^3.9.1",
         "reactjs-social-login": "^2.6.3",
-        "typescript": "3.6.4"
+        "sequelize": "^6.37.0",
+        "typescript": "3.6.4",
+        "xml2js": "^0.6.2"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -34,5 +41,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@types/xml2js": "^0.4.14"
     }
 }

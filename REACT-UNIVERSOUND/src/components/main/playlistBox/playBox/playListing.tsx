@@ -11,12 +11,11 @@ const PlayListing: FunctionComponent<Props> = ({song}) => {
     return (
         <ul className={styles.likelist}>
             <li className={styles.elementlist}>
-                <img className={styles.likepics} src={song.picture} alt="dj" />
+                <img className={styles.likepics} src={song.metadata.coverArtSrc} alt="dj" />
                 <div>
-                    <p>{song.track}</p>
-                    <p>{song.artiste}</p>
-                    <p>{song.album}</p>
-                    <p>{song.time}</p>
+                    <p>{song.metadata.title}</p>
+                    <p>{song.metadata.artist}</p>
+                    <p>{song.metadata.album}</p>
                 </div>
             </li>
         </ul>

@@ -1,4 +1,4 @@
-import playlist from '../playlist/playlist';
+import SONGS from '../../models/mock-song';
 import Controls from './controls';
 import ProgressBar from './progressbar';
 import SongInfo from './song-info';
@@ -15,7 +15,7 @@ const AudioPlayer = () => {
     toggleRepeat,
     toggleShuffle,
     setPlaybackPosition,
-  } = useAudioPlayer(playlist);
+  } = useAudioPlayer(SONGS);
 
   const {
     repeat,
@@ -43,11 +43,13 @@ const AudioPlayer = () => {
       return (currentTrackPlaybackPosition / currentTrackDuration) * 100;
     }
   }
+  
   const isPlaying = playbackState === 'PLAYING';
+
   return (
     <div className={styles.playBox}>
       <div className={styles.songInfo}>
-      <SongInfo 
+      <SongInfo
       title={currentTrackMetadata ? currentTrackMetadata.title : undefined}
       artist={currentTrackMetadata ? currentTrackMetadata.artist : undefined}
       coverArtSrc={currentTrackMetadata ? currentTrackMetadata.coverArtSrc : undefined}
@@ -74,6 +76,7 @@ const AudioPlayer = () => {
         progress={computeProgress()}
       />
       </div>
+      <div className={styles.heart}></div>
     </div>
   );
 };

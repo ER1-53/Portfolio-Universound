@@ -7,6 +7,8 @@ import LoginPage from './pages/userLogPage/loginpage/login';
 import PageNotFound from './pages/pageNotFound/pageNotFound';
 import LikePage from './pages/likePage/likePage';
 import Playlist from './pages/playlist/playlist';
+import PrivateRoute from './PrivateRoute';
+
 
 
 const App = () => {
@@ -14,11 +16,11 @@ const App = () => {
     <Router>
             <Switch>
                 <Route exact path="/" component={LandingPage}/>
-                <Route path="/songpage" component={SoundPage}/>
+                <PrivateRoute path="/songpage" component={SoundPage}/>
                 <Route path="/signup" component={SignUp}/>
                 <Route path="/login" component={LoginPage}/>
-                <Route path="/likePage" component={LikePage}/>
-                <Route path="/playlist" component={Playlist}/>
+                <PrivateRoute path="/likePage" component={LikePage}/>
+                <PrivateRoute path="/playlist" component={Playlist}/>
                 <Route component={PageNotFound}/>
             </Switch>
     </Router>

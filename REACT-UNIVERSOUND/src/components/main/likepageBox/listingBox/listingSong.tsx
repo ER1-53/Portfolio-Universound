@@ -11,11 +11,10 @@ const ListingSong: FunctionComponent<Props> = ({song}) => {
     return (
         <ul className={styles.likelist}>
             <li className={styles.elementlist}>
-                <img className={styles.likepics} src={song.picture} alt="dj" />
-                <p><strong>Titre : </strong>{song.track}</p>
-                <p><strong>Auteur : </strong>{song.artiste}</p>
-                <p><strong>Album : </strong>{song.album}</p>
-                <p><strong>Durée : </strong>{song.time}</p>
+                <img className={styles.likepics} src={song.metadata.coverArtSrc} alt="dj" />
+                <p><strong>Titre : </strong>{song.metadata.title}</p>
+                <p><strong>Auteur : </strong>{song.metadata.artist}</p>
+                <p><strong>Album : </strong>{song.metadata.album}</p>
                 <div className={styles.boxajout + " " + styles.croix}></div>
                 <div className={styles.boxajout + " " + styles.coeur}></div>
             </li>
