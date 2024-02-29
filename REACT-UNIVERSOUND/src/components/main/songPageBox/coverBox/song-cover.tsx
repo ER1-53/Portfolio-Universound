@@ -13,7 +13,11 @@ const SongCover: FunctionComponent<Props> = ({song}) => {
             <div className={styles.SoundBox}>
             <div className={styles.jacket_box}>
                 <img src={song.metadata.coverArtSrc} alt="" className={styles.jacket} />
-                <img src="/cover/play-151523_640.png" alt="" className={styles.player} />
+                <div className={styles.playButton}>
+                    <li>
+                        <a href ="/cover/play-151523_640.png"> <img src="/cover/play-151523_640.png" alt="" className={styles.player} onClick = togglePlayButton /></a>
+                    </li>
+                </div>
                 <header>
                 <h4>{song.metadata.title}</h4>
                 <p>{song.metadata.album}</p>

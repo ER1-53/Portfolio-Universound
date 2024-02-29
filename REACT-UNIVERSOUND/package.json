@@ -3,9 +3,11 @@
     "version": "1.0.0",
     "description": "An awesome application to handle .",
     "dependencies": {
+        "@reduxjs/toolkit": "^2.2.1",
         "@types/node": "12.11.1",
         "@types/react": "16.9.9",
         "@types/react-dom": "16.9.2",
+        "@types/react-redux": "^7.1.33",
         "@types/react-router-dom": "^5.1.2",
         "axios": "^1.6.7",
         "dotenv": "^16.4.4",
