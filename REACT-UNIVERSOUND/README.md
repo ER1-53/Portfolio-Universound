@@ -32,3 +32,4 @@ npm install dotenv
 redémarrer mysql
 sudo systemctl restart mysql
 
+Redux Toolkit : action 
