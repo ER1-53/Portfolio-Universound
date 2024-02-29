@@ -33,17 +33,18 @@ const AudioPlayer = () => {
   }
 
   function computeProgress(): number {
-    const noProgress =
-      currentTrackDuration === null ||
-      currentTrackPlaybackPosition === null ||
-      currentTrackDuration === 0;
-    if (noProgress) {
+    // Ensure both values are numbers or null
+    const safeCurrentTrackPlaybackPosition = currentTrackPlaybackPosition === null ? 0 : currentTrackPlaybackPosition;
+    const safeCurrentTrackDuration = currentTrackDuration === null ? 1 : currentTrackDuration; // Use 1 to avoid division by zero
+
+    if (safeCurrentTrackDuration === 0) {
+      // Handle situations where the duration is initially 0
       return 0;
     } else {
-      return (currentTrackPlaybackPosition / currentTrackDuration) * 100;
+      return (safeCurrentTrackPlaybackPosition / safeCurrentTrackDuration) * 100;
     }
   }
-  
+
   const isPlaying = playbackState === 'PLAYING';
 
   return (
