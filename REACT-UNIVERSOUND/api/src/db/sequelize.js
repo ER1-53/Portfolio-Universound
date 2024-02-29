@@ -24,22 +24,6 @@ if(process.env.NODE_ENV === 'production'){
 const Song = SongModel(sequelize, DataTypes)
 const User = UserModel(sequelize, DataTypes)
 
-/* const initDB = () => {
-  return sequelize.sync()
-  .then(_ => {
-    songs.map(song => {
-    Song.create({
-      audioSrc: song.audioSrc,
-      metadata: {
-        album: song.metadata.album,
-        artist: song.metadata.artist,
-        coverArtSrc: song.metadata.coverArtSrc,
-        types: song.metadata.types,
-        title: song.metadata.title,
-        },
-    }).then(song => console.log(song.toJSON()))
-    }) */
-
 const initDB = async () => {
   const count = await Song.count();
 
@@ -59,8 +43,6 @@ const initDB = async () => {
       })
       .then(song => console.log(song.toJSON()))
       .catch(error => console.error(error));
-
-
 
     bcrypt.hash('amazinger', 10)
     .then(hashedPassword => {
