@@ -1,5 +1,5 @@
 export default class Song {
-    // 1. Typage des propiétés d'un pokémon.
+    // 1. Typage des propiétés d'un track
     id: number;
     audioSrc: string;
     metadata: {
@@ -9,10 +9,10 @@ export default class Song {
         coverArtSrc: string;
         types: Array<string>;
     }
- 
-    
-     
-    // 2. Définition des valeurs par défaut des propriétés d'un pokémon.
+
+
+
+    // 2. Définition des valeurs par défaut des propriétés d'un Track
     constructor(
      id: number,
      audioSrc: string = './',
@@ -30,7 +30,7 @@ export default class Song {
         types: [],
     }
     ) {
-     // 3. Initialisation des propiétés d'un pokémons.
+     // 3. Initialisation des propiétés d'un tracks
      this.id = id;
      this.audioSrc = audioSrc;
      this.metadata = metadata;
