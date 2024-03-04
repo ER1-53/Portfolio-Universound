@@ -3,12 +3,19 @@ import SONGS from "../../../models/mock-song";
 import SongCover from "./coverBox/song-cover";
 import Song from "../../../models/song";
 import styles from './songList.module.css'
+import SongService from "../../../service/song_servicev1";
 
 const SongListHistoric: FunctionComponent = () => {
   const [songs, setSongs] = useState<Song[]>([]);
 
-  useEffect(() => {
+ /*  useEffect(() => {
     setSongs(SONGS);
+    console.log('fetching2:' + typeof(setSongs(SONGS)))
+  }, []); */
+
+  useEffect(() => {
+    SongService.fetchSongList().then((songs) => setSongs(songs))
+
   }, []);
 
   const lastSongs = songs.slice(Math.max(songs.length - 10, 0));

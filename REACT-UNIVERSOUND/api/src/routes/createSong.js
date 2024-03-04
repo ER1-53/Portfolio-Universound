@@ -2,6 +2,7 @@ const { Song } = require('../db/sequelize')
 const { ValidationError, UniqueConstraintError } = require('sequelize')
 const auth = require('../auth/auth')
 
+
 module.exports = (app) => {
   app.post('/api/songs', auth, (req, res) => {
     Song.create(req.body)
