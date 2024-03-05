@@ -6,19 +6,19 @@ export default class SongService {
 
   static fetchSongList(): Promise<Song[]> {
 
-    const cookies = document.cookie.split('; ');
-    console.log('dans service song les cookies : ' + cookies)
+    const cookies = document.cookie.split(',');
     let token = '';
 
     const matchingCookie = cookies.find(item => item.startsWith('UniverToken='));
-    if (matchingCookie) {
+    console.log(matchingCookie)
+    if(matchingCookie) {
       const [_, tokenValue] = matchingCookie.split('=');
       token = tokenValue;
+      
     }
-    console.log('dans songService le token :' + token)
     return axios
       .get('http://localhost:4001/api/songs', {
-            headers: { authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${token}` }
           })
           .then((res) => {const json = res.data.data;
             console.log(res.data.data);

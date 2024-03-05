@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 interface SignupProps {
-  handleSignup: (username: string, password: string, email: string) => void;
+  handleSignup: (username: string, password: string, email: string, fistname: string, lastname: string) => void;
 }
 
 const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
@@ -15,6 +15,9 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [firstname, setFirstname] = useState('');
+
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -22,7 +25,7 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
       alert('Les mots de passe ne correspondent pas!');
       return;
     }
-    handleSignup(username, password, email);
+    handleSignup(username, password, email, firstname, lastname);
   };
 
   const onSignIn = (params: IResolveParams) => {
@@ -47,16 +50,23 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
 
             <hr />
             <form action="/submit" method="post" className={styles.field} onSubmit={handleSubmit}>
-              <label htmlFor="e-mail">Adresse e-mail :</label>
+              <label htmlFor="firstname">Firstname :</label>
+              <input type="text" id="firstname" name="firstname" required placeholder="nom" value={firstname} onChange={e => setUsername(e.target.value)} />
+
+              <label htmlFor="lastname">Lastname :</label>
+              <input type="text" id="lastname" name="lastname" required placeholder="nom" value={lastname} onChange={e => setUsername(e.target.value)} />
+
+              <label htmlFor="e-mail">Address e-mail :</label>
               <input type="text" id="email" name="email" required placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
 
-              <label htmlFor="username">Nom :</label>
+              <label htmlFor="username">Username :</label>
               <input type="text" id="username" name="username" required placeholder="nom" value={username} onChange={e => setUsername(e.target.value)} />
 
-              <label htmlFor="password">Mot de passe :</label>
+
+              <label htmlFor="password">Password :</label>
               <input type="password" id="passwordSignUp" name="passwordSignUp" required placeholder="mot de passe" value={password} onChange={e => setPassword(e.target.value)} />
 
-              <label htmlFor="password">Confirmation du Mot passe :</label>
+              <label htmlFor="password">checking password :</label>
               <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="mot de passe" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
               <div className={styles.buttonSubmit}>
               <button type="submit">créer un compte</button>

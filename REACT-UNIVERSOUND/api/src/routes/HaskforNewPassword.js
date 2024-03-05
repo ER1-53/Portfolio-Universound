@@ -27,7 +27,7 @@ app.post('/api/users/reset-password', (req, res) => {
       to: req.body.mail,
       subject: 'Réinitialisation du mot de passe',
       text: 'Pour réinitialiser votre mot de passe, veuillez cliquer sur le lien suivant : \n\n' +
-            `http://localhost:4001/api/users/reset-password/${resetPasswordToken}` // Remplacez par l'URL de votre application
+            `http://localhost:3000/renewPassPage/${resetPasswordToken}`
     };
 
     // Envoyer l'e-mail
@@ -36,7 +36,7 @@ app.post('/api/users/reset-password', (req, res) => {
         console.error('Il y a eu une erreur : ', error);
       } else {
         console.log('Voici la réponse : ', response);
-        res.status(200).json('Récupération du mot de passe envoyée avec succès');
+        res.status(200).json({message: 'Récupération du mot de passe envoyée avec succès', token: resetPasswordToken});
       }
     });
   })

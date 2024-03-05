@@ -2,10 +2,10 @@ import React, { FunctionComponent, useState } from 'react';
 import { GoogleLoginButton } from 'react-social-login-buttons';
 import { LoginSocialGoogle, IResolveParams  } from 'reactjs-social-login';
 import LogoHeader from '../../../components/header/logoheader';
-import styles from './login.module.css'
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import styles from './login.module.css';
+import { useHistory, Link } from 'react-router-dom';
 import AuthService from '../../../service/authentification-service';
+
 
 
 type Field = {
@@ -21,9 +21,10 @@ type LoginInfos = {
 
 const LoginPage: FunctionComponent = () => {
 
+
   const history = useHistory()
 
-  // recuperation des inforamtions pour le social login 
+  // recuperation des inforamtions pour le social login
   const onSignIn = (params: IResolveParams) => {
     if (params.provider && params.data) {
       console.log(params.provider, params.data);
@@ -32,7 +33,7 @@ const LoginPage: FunctionComponent = () => {
 
   const [loginInfos, setLoginInfos] = useState<LoginInfos>({
     username: {value: '' },
-    password: {value: '' },
+    password: {value: '' }
   });
 
   const [message, setMessage] = useState<String>('')
@@ -43,7 +44,7 @@ const LoginPage: FunctionComponent = () => {
     const newField: Field = { [fieldName]: { value: fieldValue } };
 
     setLoginInfos({ ...loginInfos, ...newField});
-  } 
+  }
 
   const validateForm = () => {
     let newLoginInfos: LoginInfos = loginInfos;
@@ -88,6 +89,8 @@ const LoginPage: FunctionComponent = () => {
     }
   }
 
+
+  // page Initiale
   return (
     <div>
       <div className={styles.title}>
@@ -96,9 +99,9 @@ const LoginPage: FunctionComponent = () => {
       <div className={styles.big_box}>
         <main className={styles.main}>
           <h2>J'ai un compte</h2><h2> UniverSound</h2>
-          
+
           <hr />
-          
+
           <form action="/submit" method="post" className={styles.field} onSubmit={(e) => handleSubmit(e)}>
             <label htmlFor="username">Identifiant :</label>
             <input type="text" id="username" name="username" required value={loginInfos.username.value} onChange={(e) => handleInputChange(e)}/>
@@ -126,11 +129,11 @@ const LoginPage: FunctionComponent = () => {
             <div className={styles.buttonSubmit}>
               <button type="submit">Se Connecter</button>
             </div>
-              <Link to="/">Mot de passe oublié ?</Link>
-          <hr/>
-              <Link to='/signup'> Créer un compte !</Link>
+              <Link to='/renewPage'>Mot de passe oublié ?</Link>
+            <hr/>
+              <Link to='/signup'>Créer un compte !</Link>
           </form>
-          
+
           <LoginSocialGoogle
             client_id="368574400224-oj4fctha2pfjqg0m5h0p99u7kjaluuad.apps.googleusercontent.com"
             scope="openid profile email"

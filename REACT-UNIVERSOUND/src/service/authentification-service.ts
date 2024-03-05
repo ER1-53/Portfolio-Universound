@@ -13,13 +13,12 @@ export default class AuthService {
               .post(
                 "http://localhost:4001/api/login",
                 { username: username, password: password },
-                { headers: { "content-type": "application/json" }},
+                { headers: { "Content-Type": "application/json" }},
                 )
               .then((res) => {
                 if (res.data) {
                   console.log(`L'utilisateur ${username} s'est authentifié avec succès.`);
                   AuthService.isAuthenticated = true;
-                  console.log('je suis dans auth:' + res.data.token);
                   resolve(res.data.token);
                   document.cookie = "UniverToken" + "=" + res.data.token;
                   const cookies = document.cookie.split('; ');
