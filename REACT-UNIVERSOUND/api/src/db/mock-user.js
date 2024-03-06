@@ -1,16 +1,14 @@
-const { getMaxListeners } = require("events")
 
 const users = [
   {
    id: 1,
-   lastname: "cremey",
-  firstname: "erwan",
-  username: "fifou",
-  password: "amazinger",
-  mail: "fifou@getMaxListeners.com",
-  resetPasswordToken: "",
-  resetPasswordExpires: ""
-  },
- ];
-
+   lastname: "admin",
+  firstname: "admin",
+  username: "admin",
+  password: "admin",
+  mail: "fifou@yopmail.com",
+  resetPasswordToken: null,
+  resetPasswordExpires: null,
+  }
+];
  module.exports = users;

@@ -1,12 +1,19 @@
-import SONGS from '../../models/mock-song';
+import React, { useEffect, useState } from 'react';
 import Controls from './controls';
 import ProgressBar from './progressbar';
 import SongInfo from './song-info';
 import useAudioPlayer from '../../audioplayer/hooks';
 import styles from './audioplayer.module.css'
-import React from 'react';
+import SongService from '../../service/song_service';
+import Song from "../../models/song";
 
 const AudioPlayer = () => {
+  const [songs, setSongs] = useState<Song[]>([]);
+
+  useEffect(() => {
+    SongService.fetchSongList().then((songs) => setSongs(songs))
+  }, []);
+
   const {
     playNextTrack,
     playPreviousTrack,
@@ -15,7 +22,7 @@ const AudioPlayer = () => {
     toggleRepeat,
     toggleShuffle,
     setPlaybackPosition,
-  } = useAudioPlayer(SONGS);
+  } = useAudioPlayer(songs);/* useAudioPlayer(SONGS); */
 
   const {
     repeat,

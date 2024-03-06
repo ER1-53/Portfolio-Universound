@@ -1,3 +1,4 @@
+import SongService from '../service/song_service';
 import { useState, useRef, useEffect } from 'react';
 import { Controls, InitialPlayerState, PlayerState, Song } from './types';
 import { createAudioplayer } from './audioplayer';
@@ -11,14 +12,31 @@ function useAudioPlayer(SONGS: Song): AudioPlayer {
   const playerRef = useRef<Controls | null>(null);
 
   useEffect(() => {
-    const newPlayer = createAudioplayer(SONGS, setPlayerState);
+    const loadData = async () => {
+      try { // Remplacez l'URL par l'URL de votre API
+        const songs = SongService.fetchSongList();
+        const newPlayer = createAudioplayer(await songs, setPlayerState);
+        playerRef.current = newPlayer;
+        return () => {
+          if (newPlayer) {
+            newPlayer.cleanup();
+          }
+        };
+      } catch (error) {
+        console.error(`Error fetching songs: ${error}`);
+      }
+    };
+    loadData();
+  }, []);
+
+    /* const newPlayer = createAudioplayer(SONGS, setPlayerState);
     playerRef.current = newPlayer;
     return () => {
       if (newPlayer) {
         newPlayer.cleanup();
       }
     };
-  }, [SONGS]);
+  }, [SONGS]); */
 
   function setPlaybackPosition(position: number) {
     if (playerRef.current) {

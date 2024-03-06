@@ -3,6 +3,7 @@ const SongModel = require('../models/song')
 const UserModel = require('../models/user')
 const songsData = require('./mock-song')
 const usersData = require('./mock-user')
+const bcrypt = require('bcrypt')
 
 
 let sequelize
@@ -30,6 +31,7 @@ const initDB = async () => {
 
   const count = await Song.count();
   const countUser = await User.count();
+
   if(count === 0 && countUser === 0) {
     songsData.map(songData => {
       Song.create({
@@ -46,18 +48,20 @@ const initDB = async () => {
       .catch(error => console.error(error));
     });
 
-    usersData.map(userData => {
-        User.create({
-            lastname: userData.lastname,
-            firstname: userData.firstname,
-            username: userData.username,
-            password: userData.password,
-            mail: userData.mail,
-            resetPasswordToken: userData.resetPasswordToken,
-            resetPasswordExpires: userData.resetPasswordExpires,
-        })
-        .then(user => console.log(user.toJSON()))
-        .catch(error => console.error('Erreur lors de la création de l\'utilisateur :', error));
+    usersData.map(async userData => {
+      const hashedPassword = await bcrypt.hash(userData.password, 10);
+
+      User.create({
+          lastname: userData.lastname,
+          firstname: userData.firstname,
+          username: userData.username,
+          password: hashedPassword,
+          mail: userData.mail,
+          resetPasswordToken: userData.resetPasswordToken,
+          resetPasswordExpires: userData.resetPasswordExpires,
+      })
+      .then(user => console.log(user.toJSON()))
+      .catch(error => console.error('Erreur lors de la création de l\'utilisateur :', error));
     });
     } else {
       console.log('La base de données universoundDB est synchronisée.')
