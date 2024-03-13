@@ -38,7 +38,7 @@ const Controls = ({
       />
       <ImageButton src={prevButtonIcon} onClick={onPrevClick} />
       <ImageButton
-        
+
         src={isPlaying ? pauseButtonIcon : playButtonIcon}
         onClick={onPlayClick}
       />
