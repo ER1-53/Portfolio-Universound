@@ -59,7 +59,7 @@ const LoginPage: FunctionComponent = () => {
      }
 
      if (loginInfos.password.value.length < 4) {
-      const errorMsg: string = 'Votre mot de passe doit faire au moins 6 caractères de long.'
+      const errorMsg: string = 'Votre mot de passe doit faire au moins 4 caractères de long.'
       const newField: Field = {value: loginInfos.password.value, error: errorMsg, isValid: false}
       newLoginInfos = { ...newLoginInfos, ...{password: newField}}
      } else {
@@ -142,8 +142,7 @@ const LoginPage: FunctionComponent = () => {
             onResolve={onSignIn}
             onReject={(err) => {
               console.log(err);
-            }}
-          >
+            }}>
             <GoogleLoginButton />
           </LoginSocialGoogle>
         </main>

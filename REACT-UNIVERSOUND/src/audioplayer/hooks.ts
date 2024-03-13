@@ -2,16 +2,19 @@ import SongService from '../service/song_service';
 import { useState, useRef, useEffect } from 'react';
 import { Controls, InitialPlayerState, PlayerState, Song } from './types';
 import { createAudioplayer } from './audioplayer';
+import { RootStateOrAny, useSelector } from 'react-redux';
 
 interface AudioPlayer extends Controls {
   playerState: PlayerState;
 }
 
-function useAudioPlayer(SONGS: Song): AudioPlayer {
+function useAudioPlayer(SONG: Song): AudioPlayer {
   const [playerState, setPlayerState] = useState<PlayerState>(InitialPlayerState);
   const playerRef = useRef<Controls | null>(null);
+  const infoSongId = useSelector((state: RootStateOrAny) => state.songSId.songId);
+  console.log(infoSongId);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const loadData = async () => {
       try { // Remplacez l'URL par l'URL de votre API
         const songs = SongService.fetchSongList();
@@ -27,16 +30,39 @@ function useAudioPlayer(SONGS: Song): AudioPlayer {
       }
     };
     loadData();
-  }, []);
+  }, []); */
 
-    /* const newPlayer = createAudioplayer(SONGS, setPlayerState);
-    playerRef.current = newPlayer;
-    return () => {
-      if (newPlayer) {
-        newPlayer.cleanup();
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const songs = await SongService.fetchSongList();
+        if (infoSongId !== undefined) {
+          const song = songs.find(song => song.id === infoSongId);
+          console.log(song)
+          if (song) {
+            const newPlayer = createAudioplayer([song], setPlayerState);
+            playerRef.current = newPlayer;
+            return () => {
+              if (newPlayer) {
+                newPlayer.cleanup();
+              }
+            };
+          }
+        } else {
+          const newPlayer = createAudioplayer(songs, setPlayerState);
+          playerRef.current = newPlayer;
+          return () => {
+            if (newPlayer) {
+              newPlayer.cleanup();
+            }
+          };
+        }
+      } catch (error) {
+        console.error(`Error fetching songs: ${error}`);
       }
     };
-  }, [SONGS]); */
+    loadData();
+  }, [infoSongId]);
 
   function setPlaybackPosition(position: number) {
     if (playerRef.current) {

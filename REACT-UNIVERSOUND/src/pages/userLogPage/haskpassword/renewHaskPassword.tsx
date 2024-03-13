@@ -82,7 +82,7 @@ const RenewHaskPage: FunctionComponent = () => {
             <div className={styles.buttonSubmit}>
               <button type="submit">Submit</button>
             </div>
-              <Link to='/login' className='return'>Retour</Link>
+              <Link to='/login' className={styles.returnLogin}>Retour</Link>
           </form>
         </main>
       </div>

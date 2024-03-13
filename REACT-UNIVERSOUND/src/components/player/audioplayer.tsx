@@ -6,13 +6,32 @@ import useAudioPlayer from '../../audioplayer/hooks';
 import styles from './audioplayer.module.css'
 import SongService from '../../service/song_service';
 import Song from "../../models/song";
+import { RootStateOrAny, useSelector } from 'react-redux';
 
 const AudioPlayer = () => {
   const [songs, setSongs] = useState<Song[]>([]);
-
-  useEffect(() => {
+  const infoSongId = useSelector((state: RootStateOrAny) => state.songSId.songId);
+  /* useEffect(() => {
     SongService.fetchSongList().then((songs) => setSongs(songs))
-  }, []);
+  }, []); */
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const songs = await SongService.fetchSongList();
+        if (infoSongId !== undefined) {
+          const song = songs.find(song => song.id === infoSongId);
+          if (song) {
+            setSongs([song]);
+          }
+        } else {
+          setSongs(songs);
+        }
+      } catch (error) {
+        console.error(`Error fetching songs: ${error}`);
+      }
+    };
+    loadData();
+  }, [infoSongId]);
 
   const {
     playNextTrack,

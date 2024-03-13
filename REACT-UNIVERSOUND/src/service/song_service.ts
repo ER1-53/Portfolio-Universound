@@ -31,6 +31,18 @@ export default class SongService {
             return json
           });
     }
+
+    static async createSong(audioSrc: string, metadata: string): Promise<void> {
+      try {
+        const res = await axios.post('http://localhost:4001/api/songs',
+        { audioSrc, metadata},
+        { headers: { "Content-Type": "application/json" }},
+        );
+        console.log('created user')
+      } catch (error) {
+        console.error(error);
+      }
+    }
 }
 
 

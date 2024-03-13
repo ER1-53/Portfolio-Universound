@@ -2,9 +2,9 @@ import React, { FunctionComponent } from 'react';
 import SongListHistoric from '../../components/main/songPageBox/song-list-historic';
 import SearchBar from '../../components/main/search/search';
 import AsideBox from '../../components/asideBox/asideBox';
-import LogoHeader from '../../components/header/logoheader';
 import styles from './soundPage.module.css'
 import AudioPlayer from '../../components/player/audioplayer';
+import HeaderDisLog from '../../components/header/headerDisLog';
 /* Mise en place pour la version 3
 import SongLexicalFieldList from './pages/mainV3/song-lexical-field-list';
 import SongTypeList from './pages/mainV3/song-type-list';
@@ -18,7 +18,7 @@ const SoundPage: FunctionComponent = () => {
  return (
     <div >
       <div className={styles.title}>
-          <LogoHeader />
+          <HeaderDisLog/>
       </div >
     <div className={styles.big_box}>
       <AsideBox/>
@@ -37,7 +37,7 @@ const SoundPage: FunctionComponent = () => {
       </main>
     </div>
     <div className={styles.fixedSong}>
-      <AudioPlayer />
+      
     </div>
   </div>
  );

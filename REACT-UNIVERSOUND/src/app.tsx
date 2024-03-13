@@ -10,7 +10,7 @@ import Playlist from './pages/playlist/playlist';
 import PrivateRoute from './PrivateRoute';
 import RenewHaskPage from './pages/userLogPage/haskpassword/renewHaskPassword';
 import RenewPassPage from './pages/userLogPage/haskpassword/renewPassword';
-
+import UpSong from './pages/soundPage/newSong';
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
                 <Route path="/signup" component={SignUp}/>
                 <Route path="/renewPage" component={RenewHaskPage}/>
                 <Route path="/login" component={LoginPage}/>
+                <Route path="/newSong" component={UpSong}/>
                 <PrivateRoute path="/likePage" component={LikePage}/>
                 <PrivateRoute path="/playlist" component={Playlist}/>
                 <Route path="/renewPassPage/:token" component={RenewPassPage}/>

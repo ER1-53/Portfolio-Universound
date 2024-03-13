@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
-import SONGS from "../../../models/mock-song";
 import SongCover from "./coverBox/song-cover";
 import Song from "../../../models/song";
 import styles from './songList.module.css'

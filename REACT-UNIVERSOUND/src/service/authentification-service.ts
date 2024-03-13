@@ -1,4 +1,5 @@
 import axios from "axios";
+import { resolve } from "path";
 
 
 export default class AuthService {
@@ -34,5 +35,10 @@ export default class AuthService {
               });
           });
         }
+
+    static leftSession(): void {
+      AuthService.isAuthenticated = false;
+      resolve();
+    }
     }
 
