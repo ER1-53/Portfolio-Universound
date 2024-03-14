@@ -1,6 +1,6 @@
 {
     "name": "react-universound",
-    "version": "2.0.0",
+    "version": "1.3.0",
     "description": "An awesome application to handle .",
     "dependencies": {
         "@reduxjs/toolkit": "1.9.2",

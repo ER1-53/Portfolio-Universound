@@ -12,30 +12,13 @@ function useAudioPlayer(SONG: Song): AudioPlayer {
   const [playerState, setPlayerState] = useState<PlayerState>(InitialPlayerState);
   const playerRef = useRef<Controls | null>(null);
   const infoSongId = useSelector((state: RootStateOrAny) => state.songSId.songId);
+  const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
   console.log(infoSongId);
-
-  /* useEffect(() => {
-    const loadData = async () => {
-      try { // Remplacez l'URL par l'URL de votre API
-        const songs = SongService.fetchSongList();
-        const newPlayer = createAudioplayer(await songs, setPlayerState);
-        playerRef.current = newPlayer;
-        return () => {
-          if (newPlayer) {
-            newPlayer.cleanup();
-          }
-        };
-      } catch (error) {
-        console.error(`Error fetching songs: ${error}`);
-      }
-    };
-    loadData();
-  }, []); */
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const songs = await SongService.fetchSongList();
+        const songs = await SongService.fetchSongList(userId);
         if (infoSongId !== undefined) {
           const song = songs.find(song => song.id === infoSongId);
           console.log(song)

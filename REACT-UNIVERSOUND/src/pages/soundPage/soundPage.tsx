@@ -37,7 +37,7 @@ const SoundPage: FunctionComponent = () => {
       </main>
     </div>
     <div className={styles.fixedSong}>
-      
+      <AudioPlayer />
     </div>
   </div>
  );

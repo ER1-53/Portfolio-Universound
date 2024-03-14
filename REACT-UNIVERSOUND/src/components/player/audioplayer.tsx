@@ -11,13 +11,14 @@ import { RootStateOrAny, useSelector } from 'react-redux';
 const AudioPlayer = () => {
   const [songs, setSongs] = useState<Song[]>([]);
   const infoSongId = useSelector((state: RootStateOrAny) => state.songSId.songId);
+  const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
   /* useEffect(() => {
     SongService.fetchSongList().then((songs) => setSongs(songs))
   }, []); */
   useEffect(() => {
     const loadData = async () => {
       try {
-        const songs = await SongService.fetchSongList();
+        const songs = await SongService.fetchSongList(userId);
         if (infoSongId !== undefined) {
           const song = songs.find(song => song.id === infoSongId);
           if (song) {

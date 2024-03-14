@@ -25,6 +25,8 @@ require('./src/routes/deleteUser')(app)
 require('./src/routes/HaskforNewPassword')(app)
 require('./src/routes/updatePassword')(app)
 require('./src/routes/finUserByMail')(app)
+require('./src/routes/userAddSong')(app)
+require('./src/routes/findUserSongs')(app)
 
 app.use(({res}) => {
   const message = 'Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.'

@@ -5,6 +5,8 @@ import LogoHeader from '../../../components/header/logoheader';
 import styles from './login.module.css';
 import { useHistory, Link } from 'react-router-dom';
 import AuthService from '../../../service/authentification-service';
+import { useSelector, useDispatch } from 'react-redux';
+import { UsernameSlice } from '../../../reducers/com_username';
 
 
 
@@ -23,6 +25,9 @@ const LoginPage: FunctionComponent = () => {
 
 
   const history = useHistory()
+  const infoUserId = useSelector(state => state)
+  const dispatch = useDispatch();
+  const [message, setMessage] = useState<String>('')
 
   // recuperation des inforamtions pour le social login
   const onSignIn = (params: IResolveParams) => {
@@ -35,8 +40,6 @@ const LoginPage: FunctionComponent = () => {
     username: {value: '' },
     password: {value: '' }
   });
-
-  const [message, setMessage] = useState<String>('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -72,15 +75,28 @@ const LoginPage: FunctionComponent = () => {
      return newLoginInfos.username.isValid && newLoginInfos.password.isValid;
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const isFormValid = validateForm();
     if(isFormValid) {
       setMessage('Tentative de connexion en cours ...');
-      AuthService.login(loginInfos.username.value, loginInfos.password.value).then(isAuthenticated => {
-        if(!isAuthenticated) {
-          setMessage('Identifiant ou mot de passe incorrect.');
-          return;
+
+      await AuthService.login(loginInfos.username.value, loginInfos.password.value).then(
+         async isAuthenticated => {
+          if(!isAuthenticated) {
+            setMessage('Identifiant ou mot de passe incorrect.');
+            return;
+          } else {
+          const userId = await AuthService.UserIdInfo(loginInfos.username.value, loginInfos.password.value);
+          console.log(`dans login je verifie qu'il y a bien userid: ${userId} et username: ${loginInfos.username.value}`);
+          dispatch({
+            type: "userS/sendUserId",
+            payload: userId,
+        });
+          dispatch({
+            type: "userName/sendUsername",
+            payload: loginInfos.username.value,
+          })
         }
 
         history.push('/songpage')
@@ -88,6 +104,9 @@ const LoginPage: FunctionComponent = () => {
       })
     }
   }
+
+
+
 
 
   // page Initiale

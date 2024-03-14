@@ -26,7 +26,7 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
       alert('Les mots de passe ne correspondent pas!');
       return;
     }
-    UserService.createUser(username, password, email, firstname, lastname);
+    UserService.createUser(firstname, lastname, username, password, email);
     const formIsValid = true
     if(formIsValid) {
       setFormSubmit(true);
