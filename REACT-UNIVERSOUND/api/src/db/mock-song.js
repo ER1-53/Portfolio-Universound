@@ -5,6 +5,7 @@ const songs = [
   metadata: {
       title: "Down on my Knees",
       artist: "Ayo",
+      album: "joyful",
       coverArtSrc: 'cover/ayo-down on my knee.jpg',
       types: ["Rock", "Pop"],
 }
@@ -15,6 +16,7 @@ const songs = [
   metadata: {
       title: "This is the life",
       artist: "Amy MacDonald",
+      album:"This is the life",
       coverArtSrc: '/cover/This_Is_the_Life_(Amy_Macdonald_single).jpg',
       types: ["Pop"],
 }
@@ -25,6 +27,7 @@ const songs = [
   metadata: {
       title: "Just the Way you are",
       artist: "Bruno Mars",
+      album:"Doo-Wops & Hooligans",
       coverArtSrc: "/cover/bruno mars-just the way you are.jpg",
       types: ["RnB, Pop"],
 }
@@ -35,6 +38,7 @@ const songs = [
   metadata: {
       title: "For What it's Worth",
       artist: "Buffalo Springfield",
+      album: "Buffalo Springfield",
       coverArtSrc: '/cover/bruffalo springfield.jpg',
       types: ["Blues, Rock"],
 }
@@ -45,6 +49,7 @@ const songs = [
   metadata: {
       title: "Around the World (Alive 2007)",
       artist: "Daft Punk",
+      album: "ALive 2007",
       coverArtSrc: '/cover/daft punk alive 2007.jpg',
       types: ["Electro", "Dance"],
 }
@@ -55,6 +60,7 @@ const songs = [
   metadata: {
       title: "Marley",
       artist: "Danakil",
+      album: "Dialogue de sourd",
       coverArtSrc: '/cover/danakil- marley.jpg',
       types: ["Reggae"],
 }
@@ -65,6 +71,7 @@ const songs = [
   metadata: {
       title: "Parmi Eux",
       artist: "Deportivo",
+      album: "Parmi eux",
       coverArtSrc: '/cover/deportivo parmis eux.jpg',
       types: ["rock"],
 }
@@ -75,6 +82,7 @@ const songs = [
   metadata: {
       title: "Bad Guy",
       artist: "Billie Eillish",
+      album: "When We All Fall Asleep, Where Do We Go?",
       coverArtSrc: '/cover/billie eillish - bad guy.jpg',
       types: ["Pop"],
 }
@@ -85,6 +93,7 @@ const songs = [
   metadata: {
       title: "Black Betty",
       artist: "Caravan Palace",
+      album:"Black Betty",
       coverArtSrc: '/cover/caravan palace - black betty.jpg',
       types: ["Jazz, Electro-Swing"],
 }
@@ -95,6 +104,7 @@ const songs = [
   metadata: {
       title: "Elephant",
       artist: "Arkhazium",
+      album: "Elephant",
       coverArtSrc: '/cover/arkhazium - elephant.jpg',
       types: ["Melodic Techno"],
 }
@@ -105,6 +115,7 @@ const songs = [
     metadata: {
         title: "Arabian Night",
         artist: "Da Tweekaz feat Bram Boender",
+        album: "Arabian Night",
         coverArtSrc: '/cover/da tweekaz-arabian night.jpg',
         types: ["Hardstyle"],
   }
@@ -115,6 +126,7 @@ const songs = [
     metadata: {
         title: "Engel",
         artist: "Rammstein",
+        album:"Sehnsucht",
         coverArtSrc: '/cover/Engel_Cover.jpg',
         types: ["Metal"],
   }
@@ -125,6 +137,7 @@ const songs = [
     metadata: {
         title: "Herald of Darkness (Alan Wake 2 Soundtrack)",
         artist: "Old God of HAsgard",
+        album:"Alan Wake 2 Soundtrack",
         coverArtSrc: '/cover/old god of hasgard- herald of darkness.jpg',
         types: ["Metal, Soundtrack"],
   }
@@ -135,6 +148,7 @@ const songs = [
     metadata: {
         title: "Don't Cry",
         artist: "Joachim Garraud & Chris Willis",
+        album:"96/24",
         coverArtSrc: "/cover/Don't cry -garraud.jpg",
         types: ["Electro, House"],
   }
@@ -145,6 +159,7 @@ const songs = [
     metadata: {
         title: "La Goffa Lolita",
         artist: "la Petite Culotte",
+        album: "la petite culotte",
         coverArtSrc: '/cover/la goffa lolita.jpg',
         types: ["chanson Française"],
   }
@@ -155,6 +170,7 @@ const songs = [
     metadata: {
         title: "Carols of the Bells",
         artist: "Linsdsey Striling",
+        album: "warmer in winter",
         coverArtSrc: '/cover/lindsay stirling.jpg',
         types: ["Electro, Christmas song"],
   }
