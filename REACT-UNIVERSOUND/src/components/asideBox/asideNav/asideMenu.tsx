@@ -12,7 +12,7 @@ const AsideMenu: FunctionComponent = () => {
                         <i className="fa-solid fa-house-crack"></i> Home
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/likePage" className={styles.nav_link}>
                         <i className="fa-regular fa-bookmark"></i> Like
                     </Link>
@@ -21,7 +21,7 @@ const AsideMenu: FunctionComponent = () => {
                     <Link to="/playlist" className={styles.nav_link}>
                         <i className="fa-solid fa-music"></i> Playlist
                     </Link>
-                </li>
+                </li> */}
             </ul>
     );
 }

@@ -1,6 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize')
+const LikeModel = require('../models/like')
+const HistoricModel = require('../models/historic')
 const SongModel = require('../models/song')
 const UserModel = require('../models/user')
+const likesData = require('./mock-like')
+const historicData = require('./mock-historic')
 const songsData = require('./mock-song')
 const usersData = require('./mock-user')
 const bcrypt = require('bcrypt')
@@ -24,19 +28,14 @@ if(process.env.NODE_ENV === 'production'){
 
 const Song = SongModel(sequelize, DataTypes)
 const User = UserModel(sequelize, DataTypes)
+const Historic = HistoricModel(sequelize, DataTypes)
+const Like = LikeModel(sequelize, DataTypes)
 
-const HistoricListening = sequelize.define('HitoricListening', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-}, {
-  timestamps: false,
-})
+User.belongsToMany(Song, { through: Historic, foreignKey: 'UserId' });
+Song.belongsToMany(User, { through: Historic, foreignKey: 'SongId' });
 
-User.belongsToMany(Song, { through: HistoricListening, foreignKey: 'UserId' })
-Song.belongsToMany(User, { through: HistoricListening, foreignKey: 'SongId' })
+User.belongsToMany(Song, { through: Like, foreignKey: 'UserId' });
+Song.belongsToMany(User, { through: Like, foreignKey: 'SongId' });
 
 const initDB = async () => {
 
@@ -46,7 +45,7 @@ const initDB = async () => {
   const countUser = await User.count();
 
   if(count === 0 && countUser === 0) {
-    songsData.map(songData => {
+    await Promise.all(songsData.map(songData => {
       Song.create({
         audioSrc: songData.audioSrc,
         metadata: {
@@ -59,9 +58,9 @@ const initDB = async () => {
       })
       .then(song => console.log(song.toJSON()))
       .catch(error => console.error(error));
-    });
+    }));
 
-    usersData.map(async userData => {
+    await Promise.all(usersData.map(async userData => {
       const hashedPassword = await bcrypt.hash(userData.password, 10);
 
       User.create({
@@ -73,18 +72,34 @@ const initDB = async () => {
           resetPasswordToken: userData.resetPasswordToken,
           resetPasswordExpires: userData.resetPasswordExpires,
       })
-      .then(user => {
-        // Ajouter des musiques à l'utilisateur après sa création
-        user.addSongs(songsData.slice(0, 3))
-        .then(() => console.log(`${user.firstname} ${user.lastname} a été créé avec les musiques${songsData.slice(0, 3).map(song => song.metadata.title).join(', ')}`))
-        .catch(error => console.error('Erreur lors de l\'ajout des musiques à l\'utilisateur :', error));
-      })
+      .then(user => console.log(user.toJSON()))
       .catch(error => console.error('Erreur lors de la création de l\'utilisateur :', error));
-    });
+    }));
+
+    historicData.map(historicData => {
+      Historic.create ({
+        UserId: historicData.UserId,
+        SongId: historicData.SongId,
+        listenedAt: historicData.listenedAt,
+      })
+      .then(historic => console.log(historic.toJSON()))
+      .catch(error => console.error('Erreur lors de la création de Historic', error))
+      });
+
+      likesData.map(likesData => {
+        Like.create ({
+          UserId: likesData.UserId,
+          SongId: likesData.SongId,
+          listenedAt: likesData.listenedAt,
+        })
+        .then(historic => console.log(historic.toJSON()))
+        .catch(error => console.error('Erreur lors de la création de Historic', error))
+        });
+
     } else {
       console.log('La base de données universoundDB est synchronisée.')
       console.log(`Base de données déjà remplie.`)
     }
 }
 
-module.exports = { initDB, Song, User }
+module.exports = { initDB, Song, User, Historic, Like}

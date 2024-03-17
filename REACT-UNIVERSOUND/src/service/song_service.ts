@@ -20,31 +20,16 @@ export default class SongService {
     return null;
   }
 
-  /* static async fetchSongList(): Promise<Song[]> {
-    const token = await SongService.upTokenByCookie();
-    console.log(`je suis le token dans fetchSong ${token}`)
-
-    try {
-      const res = await axios.get('http://localhost:4001/api/songs', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      console.log('Song list fetched successfully');
-      return res.data.data;
-    } catch (error) {
-      console.error(`Error fetching song list: ${error}`);
-      throw error;
-    }
-  } */
-  static async fetchSongList(userId: number): Promise<Song[]> {
+  static async fetchSongList(username: string, userid: number): Promise<Song[]> {
     const token = await SongService.upTokenByCookie();
     console.log(`je suis le token dans fetchSong ${token}`);
-    console.log(`Dans song_service userid : ${userId}`);
+    console.log(`Dans song_service username : ${username}`);
 
     try {
       let url = 'http://localhost:4001/api/songs'; // Default URL for admin
 
-      if (userId && userId !== 1) { // Check if user is logged in and not admin (ID 1)
-        url = `http://localhost:4001/api/users/${userId}/songs`;
+      if (userid && username !== 'admin') { // Check if user is logged in and not admin (ID 1)
+        url = `http://localhost:4001/api/users/${userid}/songs`;
       }
 
       const res = await axios.get(url, {
@@ -69,6 +54,17 @@ export default class SongService {
     } catch (error) {
       console.error(`Error creating song: ${error}`);
       throw error;
+    }
+  }
+
+  static async deleteSong(songId: string) {
+    const token = await SongService.upTokenByCookie();
+    try {
+      const res = await axios.delete(`http://localhost:4001/api/songs/${songId}`,{
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    } catch (error) {
+      console.error(' La musique n\'a pas pu etre supprimé.'+ error)
     }
   }
 }

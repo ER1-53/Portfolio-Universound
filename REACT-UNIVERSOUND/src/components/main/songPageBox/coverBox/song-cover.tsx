@@ -17,6 +17,16 @@ const SongCover: FunctionComponent<Props> = ({song}) => {
             type: "songS/sendSongId",
             payload: song.id,
         });
+        dispatch({
+            type: "song/sendSong",
+            payload: song,
+        });
+    }
+    const handlePushLike = () => {
+        dispatch({
+            type: "addSongsLike/sendAddSongLike",
+            payload: song.id,
+        });
     }
 
     return (
@@ -27,6 +37,7 @@ const SongCover: FunctionComponent<Props> = ({song}) => {
                 <header>
                 <h4>{song.metadata.title}</h4>
                 <p>{song.metadata.album}</p>
+                {/* <div onClick={handlePushLike} className={styles.heart}></div> */}
                 </header>
             </div>
             </div>

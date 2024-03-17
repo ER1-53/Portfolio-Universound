@@ -10,17 +10,15 @@ import { RootStateOrAny, useSelector } from 'react-redux';
 
 const AudioPlayer = () => {
   const [songs, setSongs] = useState<Song[]>([]);
-  const infoSongId = useSelector((state: RootStateOrAny) => state.songSId.songId);
-  const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
-  /* useEffect(() => {
-    SongService.fetchSongList().then((songs) => setSongs(songs))
-  }, []); */
+  const songId = useSelector((state: RootStateOrAny) => state.song.song.id)
+  const user = useSelector((state: RootStateOrAny) => state.user.user);
+
   useEffect(() => {
     const loadData = async () => {
       try {
-        const songs = await SongService.fetchSongList(userId);
-        if (infoSongId !== undefined) {
-          const song = songs.find(song => song.id === infoSongId);
+        const songs = await SongService.fetchSongList(user.username, user.id);
+        if (songId !== undefined) {
+          const song = songs.find(song => song.id === songId);
           if (song) {
             setSongs([song]);
           }
@@ -32,7 +30,7 @@ const AudioPlayer = () => {
       }
     };
     loadData();
-  }, [infoSongId]);
+  }, [songId]);
 
   const {
     playNextTrack,
@@ -104,7 +102,7 @@ const AudioPlayer = () => {
         progress={computeProgress()}
       />
       </div>
-      <div className={styles.heart}></div>
+      {/* <div className={styles.heart}></div> */}
     </div>
   );
 };

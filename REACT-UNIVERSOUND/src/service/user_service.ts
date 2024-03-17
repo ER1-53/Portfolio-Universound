@@ -1,4 +1,5 @@
 import axios from 'axios';
+import SongService from './song_service';
 
 export default class UserService {
 
@@ -47,4 +48,29 @@ export default class UserService {
       console.error(error);
     }
   }
+
+  static async findAllUser() {
+    const token = await SongService.upTokenByCookie();
+    try {
+      const res = await axios.get('/api/users', {
+      headers: { Authorization: `Bearer ${token}` }
+      });
+      console.log(`List d\'utilisateur chargé avec succès ${res.data.data}`);
+      return res.data.data;
+    } catch (error) {
+      console.error('les utilisateur n\'ont pas pu etre chargé.'+ error)
+    }
+  }
+
+  static async deleteUser(userId: string) {
+    const token = await SongService.upTokenByCookie();
+    try {
+      const res = await axios.delete(`http://localhost:4001/api/users/${userId}`,{
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    } catch (error) {
+      console.error(' L\'utilisateur n\'a pas pu etre supprimé.'+ error)
+    }
+  }
+
 };

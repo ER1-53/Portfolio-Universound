@@ -5,9 +5,7 @@ import LogoHeader from '../../../components/header/logoheader';
 import styles from './login.module.css';
 import { useHistory, Link } from 'react-router-dom';
 import AuthService from '../../../service/authentification-service';
-import { useSelector, useDispatch } from 'react-redux';
-import { UsernameSlice } from '../../../reducers/com_username';
-
+import {  useDispatch } from 'react-redux';
 
 
 type Field = {
@@ -25,7 +23,7 @@ const LoginPage: FunctionComponent = () => {
 
 
   const history = useHistory()
-  const infoUserId = useSelector(state => state)
+  /* const infoUserId = useSelector(state => state) */
   const dispatch = useDispatch();
   const [message, setMessage] = useState<String>('')
 
@@ -87,20 +85,17 @@ const LoginPage: FunctionComponent = () => {
             setMessage('Identifiant ou mot de passe incorrect.');
             return;
           } else {
-          const userId = await AuthService.UserIdInfo(loginInfos.username.value, loginInfos.password.value);
-          console.log(`dans login je verifie qu'il y a bien userid: ${userId} et username: ${loginInfos.username.value}`);
-          dispatch({
-            type: "userS/sendUserId",
-            payload: userId,
-        });
-          dispatch({
-            type: "userName/sendUsername",
-            payload: loginInfos.username.value,
-          })
-        }
+          const user = await AuthService.UserIdInfo(loginInfos.username.value, loginInfos.password.value);
+          console.log(typeof(user))
+          if(user){
+            dispatch({
+              type: "user/sendUser",
+              payload: user,
+            });
+          }
 
         history.push('/songpage')
-
+      }
       })
     }
   }

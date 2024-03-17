@@ -9,6 +9,26 @@ const users = [
   mail: "fifou@yopmail.com",
   resetPasswordToken: null,
   resetPasswordExpires: null,
-  }
+  },
+  {
+    id: 2,
+    lastname: "Gael",
+   firstname: "Deschamps",
+   username: "gael",
+   password: "phoenix",
+   mail: "stormphoenix@yopmail.com",
+   resetPasswordToken: null,
+   resetPasswordExpires: null,
+   },
+   {
+    id: 3,
+    lastname: "Erwan",
+   firstname: "Cremey",
+   username: "erwan",
+   password: "erwan",
+   mail: "devmaster@yopmail.com",
+   resetPasswordToken: null,
+   resetPasswordExpires: null,
+   }
 ];
  module.exports = users;

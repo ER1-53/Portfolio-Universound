@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { idSongSlice } from "./reducers/com_songid";
-import { idUserSlice } from "./reducers/com_userid"
-import { UsernameSlice } from "./reducers/com_username";
+import { addSongLikeSlice } from "./reducers/com_addSong";
+import { userSlice } from "./reducers/com_user";
+import { songSlice } from "./reducers/com_song";
 
 export const mainStore = configureStore({
   reducer: {
-    songSId: idSongSlice.reducer,
-    userSId: idUserSlice.reducer,
-    usersName : UsernameSlice.reducer,
+    addSongAll: addSongLikeSlice.reducer,
+    song: songSlice.reducer,
+    user: userSlice.reducer,
     devTools: true,
   }
 })

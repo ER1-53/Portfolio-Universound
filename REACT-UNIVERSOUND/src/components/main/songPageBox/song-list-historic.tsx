@@ -8,15 +8,15 @@ import { isEmpty } from "../../../service/isEmpty";
 
   const SongListHistoric: FunctionComponent = () => {
   const [songs, setSongs] = useState<Song[]>([]);
-  const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
-
-  console.log(`je suis userid: ${userId} dans songlist`);
+  const user = useSelector((State: RootStateOrAny) => State.user.user)
+  console.log(`je suis userid: ${user.id} dans songlist`);
+  console.log(`je suis username: ${user.username} dans songlist`);
   useEffect(() => {
-    SongService.fetchSongList(userId)
+    SongService.fetchSongList(user.username, user.id)
     .then((songs) => setSongs(songs))
   }, []);
 
-  const lastSongs = songs.slice(Math.max(songs.length - 10, 0));
+  const lastSongs = songs.slice(Math.max(songs.length - 50, 0));
   console.log(`je suis apres useeffect de songlist ${songs}`)
 
   return (

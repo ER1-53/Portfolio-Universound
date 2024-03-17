@@ -2,13 +2,19 @@ import React, { FunctionComponent, useEffect, useState} from "react";
 import styles from './listBox.module.css'
 import ListingSong from "./listingBox/listingSong";
 import Song from "../../../models/song";
-import SONGS from "../../../models/mock-song";
+import SongService from "../../../service/song_service";
+import { RootStateOrAny, useSelector } from "react-redux";
 
 const ListBox: FunctionComponent = () => {
-    const [song, setSong] = useState<Song[]>([]);
+    const [songs, setSongs] = useState<Song[]>([]);
+    const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
+    const songId = useSelector((state: RootStateOrAny) => state.addSongAll.songId)
+    console.log(`je suis dans list box ${userId} `)
+    console.log(`je suis userid: ${userId} dans songlist`);
 
     useEffect(() => {
-        setSong(SONGS);
+      SongService.fetchSongList(userId)
+      .then((songs) => setSongs(songs))
     }, []);
 
 
@@ -16,7 +22,7 @@ const ListBox: FunctionComponent = () => {
         <div>
             <section className={styles.selection}>
                 <h2>Liked Music</h2>
-                {song.map(song => (
+                {songs.map(song => (
                 <ListingSong key={song.id} song={song} />
                 ))}
             </section>

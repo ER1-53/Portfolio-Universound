@@ -37,7 +37,7 @@ export default class AuthService {
           });
         }
 
-    static async UserIdInfo(username: string, password: string): Promise<number | undefined> {
+    static async UserIdInfo(username: string, password: string): Promise< { id: number, username: string } | undefined> {
       try {
         const response = await axios.post(
           "http://localhost:4001/api/login",
@@ -46,8 +46,8 @@ export default class AuthService {
         );
 
         if (response.data) {
-          console.log(`Dans userInfo L'utilisateur ${username} s'est authentifié avec succès.${response.data.data.id}`);
-          return response.data.data.id;
+          console.log(`Dans userInfo L'utilisateur ${username} s'est authentifié avec succès.${response.data.data}`);
+          return response.data.data;
         }
 
         // Implicitly handle cases where response.data is false or undefined

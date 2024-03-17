@@ -11,16 +11,16 @@ interface AudioPlayer extends Controls {
 function useAudioPlayer(SONG: Song): AudioPlayer {
   const [playerState, setPlayerState] = useState<PlayerState>(InitialPlayerState);
   const playerRef = useRef<Controls | null>(null);
-  const infoSongId = useSelector((state: RootStateOrAny) => state.songSId.songId);
-  const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
-  console.log(infoSongId);
+  const songId = useSelector((state: RootStateOrAny) => state.song.song.id)
+  const user = useSelector((state: RootStateOrAny) => state.user.user);
+
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const songs = await SongService.fetchSongList(userId);
-        if (infoSongId !== undefined) {
-          const song = songs.find(song => song.id === infoSongId);
+        const songs = await SongService.fetchSongList(user.username, user.id);
+        if (songId !== undefined) {
+          const song = songs.find(song => song.id === songId);
           console.log(song)
           if (song) {
             const newPlayer = createAudioplayer([song], setPlayerState);
@@ -45,7 +45,7 @@ function useAudioPlayer(SONG: Song): AudioPlayer {
       }
     };
     loadData();
-  }, [infoSongId]);
+  }, [songId]);
 
   function setPlaybackPosition(position: number) {
     if (playerRef.current) {

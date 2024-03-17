@@ -14,19 +14,20 @@ app
 
 sequelize.initDB()
 
-require('./src/routes/findAllSongs')(app)
-require('./src/routes/findSongByPk')(app)
-require('./src/routes/createSong')(app)
-require('./src/routes/updateSong')(app)
-require('./src/routes/deleteSong')(app)
-require('./src/routes/login')(app)
-require('./src/routes/createUser')(app)
-require('./src/routes/deleteUser')(app)
-require('./src/routes/HaskforNewPassword')(app)
-require('./src/routes/updatePassword')(app)
-require('./src/routes/finUserByMail')(app)
-require('./src/routes/userAddSong')(app)
-require('./src/routes/findUserSongs')(app)
+require('./src/routes/song/findAllSongs')(app)
+require('./src/routes/song/findSongByPk')(app)
+require('./src/routes/song/createSong')(app)
+require('./src/routes/song/updateSong')(app)
+require('./src/routes/song/deleteSong')(app)
+require('./src/routes/user/login')(app)
+require('./src/routes/user/createUser')(app)
+require('./src/routes/user/deleteUser')(app)
+require('./src/routes/user/HaskforNewPassword')(app)
+require('./src/routes/user/updatePassword')(app)
+require('./src/routes/user/finUserByMail')(app)
+require('./src/routes/historic/findUserSongs')(app)
+/* require('./src/routes/userAddSong')(app)
+require('./src/routes/findAllUser')(app) */
 
 app.use(({res}) => {
   const message = 'Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.'

@@ -1,4 +1,4 @@
-const validTypes = ['Pop', 'Rock', 'Electro', 'Classique', 'Funk', 'Rap', 'Blues', 'Dance', 'HardRock', 'Country', 'Jazz', 'Hip-Hop', 'Reggae', 'R\'n\'B' ];
+const validTypes = ['Pop', 'Rock', 'Electro', 'Classique', 'Funk', 'Rap', 'Blues', 'Dance', 'HardRock', 'Country', 'Jazz', 'Hip-Hop', 'Reggae', 'RnB', 'Jazz', 'Electro', 'Techno','Metal', 'Chanson Française' ];
 
 module.exports = (sequelize, Datatypes) => {
   return sequelize.define('Song', {

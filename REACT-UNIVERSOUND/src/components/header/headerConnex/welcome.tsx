@@ -4,12 +4,13 @@ import styles from './welcome.module.css';
 
 const WelcomeUser: FunctionComponent = () => {
 
-  const usernameSlice = useSelector((state: RootStateOrAny) => state.usersName.username)
-  console.log(`je suis dans welcome ${usernameSlice}`)
+  const user = useSelector((state: RootStateOrAny) => state.user.user)
+  const username = user.username
+  console.log(`je suis dans welcome ${user.username}`)
 
   return (
     <div className={styles.userName}>
-      {usernameSlice}
+      {username}
     </div>
   );
 };
