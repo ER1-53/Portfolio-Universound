@@ -2,6 +2,11 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   const Historic = sequelize.define('Historic', {
+    historic_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+      },
     UserId: {
       type: DataTypes.INTEGER,
       references: {

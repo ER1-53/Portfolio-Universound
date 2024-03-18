@@ -7,14 +7,14 @@ import { RootStateOrAny, useSelector } from "react-redux";
 
 const ListBox: FunctionComponent = () => {
     const [songs, setSongs] = useState<Song[]>([]);
-    const userId = useSelector((state: RootStateOrAny) => state.userSId.userId);
-    const songId = useSelector((state: RootStateOrAny) => state.addSongAll.songId)
-    console.log(`je suis dans list box ${userId} `)
-    console.log(`je suis userid: ${userId} dans songlist`);
+    const user = useSelector((state: RootStateOrAny) => state.user.user);
+
+    console.log(`je suis dans list box ${user.id} `)
+    console.log(`je suis userid: ${user.id} dans songlist`);
 
     useEffect(() => {
-      SongService.fetchSongList(userId)
-      .then((songs) => setSongs(songs))
+        SongService.fetchSongList(user.username, user.id)
+        .then((songs) => setSongs(songs))
     }, []);
 
 

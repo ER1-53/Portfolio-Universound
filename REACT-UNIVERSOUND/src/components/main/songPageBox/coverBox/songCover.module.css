@@ -48,6 +48,8 @@
 .jacket_box p {
 	font-size: 10px;
 	margin-left: 4px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .yourStyle {
 	display: flex;

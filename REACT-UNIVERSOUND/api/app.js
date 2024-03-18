@@ -13,21 +13,25 @@ app
 .use(cors())
 
 sequelize.initDB()
-
+//Routes song
 require('./src/routes/song/findAllSongs')(app)
 require('./src/routes/song/findSongByPk')(app)
 require('./src/routes/song/createSong')(app)
 require('./src/routes/song/updateSong')(app)
 require('./src/routes/song/deleteSong')(app)
+
+//Routes user
 require('./src/routes/user/login')(app)
 require('./src/routes/user/createUser')(app)
 require('./src/routes/user/deleteUser')(app)
 require('./src/routes/user/HaskforNewPassword')(app)
 require('./src/routes/user/updatePassword')(app)
 require('./src/routes/user/finUserByMail')(app)
+
+//Routes historic
 require('./src/routes/historic/findUserSongs')(app)
-/* require('./src/routes/userAddSong')(app)
-require('./src/routes/findAllUser')(app) */
+require('./src/routes/historic/addUserSong')(app)
+
 
 app.use(({res}) => {
   const message = 'Impossible de trouver la ressource demandée ! Vous pouvez essayer une autre URL.'

@@ -19,9 +19,10 @@ function useAudioPlayer(SONG: Song): AudioPlayer {
     const loadData = async () => {
       try {
         const songs = await SongService.fetchSongList(user.username, user.id);
+        console.log(`je suis dans hook ${songs}`);
         if (songId !== undefined) {
           const song = songs.find(song => song.id === songId);
-          console.log(song)
+          console.log(`je suis dans hook ${song}`);
           if (song) {
             const newPlayer = createAudioplayer([song], setPlayerState);
             playerRef.current = newPlayer;

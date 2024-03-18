@@ -14,10 +14,6 @@ const SongCover: FunctionComponent<Props> = ({song}) => {
 
     const handleSongId = () => {
         dispatch({
-            type: "songS/sendSongId",
-            payload: song.id,
-        });
-        dispatch({
             type: "song/sendSong",
             payload: song,
         });

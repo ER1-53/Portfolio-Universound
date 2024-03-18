@@ -135,7 +135,7 @@ const songs = [
        id: 13,
        audioSrc: "/song/Herald of Darkness (Video Edit).wav",
        metadata: {
-           title: "Herald of Darkness (Alan Wake 2 Soundtrack)",
+           title: "Herald of Darkness",
            artist: "Old God of HAsgard",
            album:"Alan Wake 2 Soundtrack",
            coverArtSrc: '/cover/old god of hasgard- herald of darkness.jpg',

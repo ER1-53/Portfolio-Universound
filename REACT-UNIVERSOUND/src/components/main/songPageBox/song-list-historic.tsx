@@ -11,10 +11,15 @@ import { isEmpty } from "../../../service/isEmpty";
   const user = useSelector((State: RootStateOrAny) => State.user.user)
   console.log(`je suis userid: ${user.id} dans songlist`);
   console.log(`je suis username: ${user.username} dans songlist`);
+
   useEffect(() => {
-    SongService.fetchSongList(user.username, user.id)
-    .then((songs) => setSongs(songs))
-  }, []);
+    const fetchSongs = async () => {
+      const songs = await SongService.fetchSongList(user.username, user.id);
+      setSongs(songs);
+    };
+
+    fetchSongs();
+  }, [user.id, user.username]);
 
   const lastSongs = songs.slice(Math.max(songs.length - 50, 0));
   console.log(`je suis apres useeffect de songlist ${songs}`)
