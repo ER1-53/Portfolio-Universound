@@ -1,14 +1,16 @@
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useState, useEffect, useContext } from "react";
 import SongCover from "./coverBox/song-cover";
 import Song from "../../../models/song";
 import styles from './songList.module.css'
 import SongService from "../../../service/song_service";
 import { useSelector, RootStateOrAny } from "react-redux";
 import { isEmpty } from "../../../service/isEmpty";
+import { RefreshContext } from "../../../service/refresh";
 
   const SongListHistoric: FunctionComponent = () => {
   const [songs, setSongs] = useState<Song[]>([]);
   const user = useSelector((State: RootStateOrAny) => State.user.user)
+  const { refresh } = useContext(RefreshContext);
   console.log(`je suis userid: ${user.id} dans songlist`);
   console.log(`je suis username: ${user.username} dans songlist`);
 
@@ -19,7 +21,7 @@ import { isEmpty } from "../../../service/isEmpty";
     };
 
     fetchSongs();
-  }, [user.id, user.username]);
+  }, [user.id, user.username, refresh]);
 
   const lastSongs = songs.slice(Math.max(songs.length - 50, 0));
   console.log(`je suis apres useeffect de songlist ${songs}`)

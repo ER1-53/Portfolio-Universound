@@ -1,6 +1,6 @@
 const songs = [
     {
-     id: 1,
+     id:1,
      audioSrc: "/song/ayo-down_on_my_knees.mp3",
      metadata: {
          title: "Down on my Knees",
@@ -11,7 +11,7 @@ const songs = [
    }
     },
     {
-     id: 2,
+     id:2,
      audioSrc: "/song/amy_macdonald-this_is_the_life.mp3",
      metadata: {
          title: "This is the life",
@@ -22,7 +22,7 @@ const songs = [
    }
     },
     {
-     id: 3,
+     id:3,
      audioSrc: "/song/Bruno Mars - Just The Way You Are (Remix).mp3",
      metadata: {
          title: "Just the Way you are",
@@ -33,7 +33,7 @@ const songs = [
    }
     },
     {
-     id: 4,
+     id:4,
      audioSrc: "/song/Buffalo Springfield - For What It's Worth.mp3",
      metadata: {
          title: "For What it's Worth",
@@ -44,7 +44,7 @@ const songs = [
    }
     },
     {
-     id: 5,
+     id:5,
      audioSrc: "/song/daft punk-around_the_world__harder_better_faster_stronger.mp3",
      metadata: {
          title: "Around the World",
@@ -55,7 +55,7 @@ const songs = [
    }
     },
     {
-     id: 6,
+     id:6,
      audioSrc: "/song/Danakil - Marley.mp3",
      metadata: {
          title: "Marley",
@@ -66,7 +66,7 @@ const songs = [
    }
     },
     {
-     id: 7,
+     id:7,
      audioSrc: "/song/Deportivo - Parmi Eux.mp3",
      metadata: {
          title: "Parmi Eux",
@@ -77,7 +77,7 @@ const songs = [
    }
     },
     {
-     id: 8,
+     id:8,
      audioSrc: "/song/Billie Eilish - bad guy (Lyrics).wav",
      metadata: {
          title: "Bad Guy",
@@ -88,7 +88,7 @@ const songs = [
    }
     },
     {
-     id: 9,
+     id:9,
      audioSrc: "/song/Caravan Palace - Black Betty.wav",
      metadata: {
          title: "Black Betty",
@@ -99,7 +99,7 @@ const songs = [
    }
     },
     {
-     id: 10,
+     id:10,
      audioSrc: "/song/Elephant.wav",
      metadata: {
          title: "Elephant",
@@ -110,7 +110,7 @@ const songs = [
    }
     },
     {
-       id: 11,
+       id:11,
        audioSrc: "/song/Da Tweekaz ft. Bram Boender - Arabian Nights (Official Hardstyle Video).wav",
        metadata: {
            title: "Arabian Night",
@@ -121,7 +121,7 @@ const songs = [
      }
       },
       {
-       id: 12,
+       id:12,
        audioSrc: "/song/Engel.wav",
        metadata: {
            title: "Engel",
@@ -132,7 +132,7 @@ const songs = [
      }
       },
       {
-       id: 13,
+       id:13,
        audioSrc: "/song/Herald of Darkness (Video Edit).wav",
        metadata: {
            title: "Herald of Darkness",
@@ -143,7 +143,7 @@ const songs = [
      }
       },
       {
-       id: 14,
+       id:14,
        audioSrc: "/song/Joachim Garraud & Chris Willis - Don't Cry (Remember My Name) (Music Video Radio Edit).wav",
        metadata: {
            title: "Don't Cry",
@@ -154,7 +154,7 @@ const songs = [
      }
       },
       {
-       id: 15,
+       id:15,
        audioSrc: "/song/La Petite Culotte - La Goffa Lolita (Paroles).wav",
        metadata: {
            title: "La Goffa Lolita",
@@ -165,7 +165,7 @@ const songs = [
      }
       },
       {
-       id: 16,
+       id:16,
        audioSrc: "/song/Lindsey Stirling - Carol of the Bells (Official Music Video).wav",
        metadata: {
            title: "Carols of the Bells",

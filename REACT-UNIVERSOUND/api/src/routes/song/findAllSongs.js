@@ -17,6 +17,7 @@ module.exports = (app) => {
           [Op.or]: [
             {'metadata.title': { [Op.like]: `%${terme}%`}},
             {'metadata.album': { [Op.like]: `%${terme}%`}},
+            {'metadata.artist': { [Op.like]: `%${terme}%`}}
           ]
         },
         order: ['metadata.title'],

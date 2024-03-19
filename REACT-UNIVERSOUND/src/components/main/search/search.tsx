@@ -1,18 +1,19 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useContext, useState } from 'react';
 import Song from '../../../models/song';
 import SongService from '../../../service/song_service';
 import styles from './search.module.css';
 import HistoricService from '../../../service/historic_service';
 import { useSelector, RootStateOrAny } from 'react-redux';
 import { isEmpty } from '../../../service/isEmpty';
+import { RefreshContext } from '../../../service/refresh';
 
 
 const SearchBar: FunctionComponent = () => {
 
     const [term, setTerm] = useState<string>('');
     const [songs, setSongs] = useState<Song[]>([]);
-    const [selectedSong, setSelectedSong] = useState<Song | null>(null);;
     const user = useSelector((State: RootStateOrAny) => State.user.user);
+    const { setRefresh } = useContext(RefreshContext);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const term = e.target.value;
@@ -27,10 +28,14 @@ const SearchBar: FunctionComponent = () => {
     }
 
     const handleSongClick = (song: Song): void => {
-        setSelectedSong(song);
+
         console.log(`dans handlesong ${user.id} ${song.id}`)
         HistoricService.addUserSong(user.id, song.id)
-            .then(() => console.log('historique ajouté'))
+        .then(() => {
+            console.log('historique ajouté');
+            setRefresh(true);
+            setRefresh(false);
+          })
             .catch((error) => console.error(error));
     }
 

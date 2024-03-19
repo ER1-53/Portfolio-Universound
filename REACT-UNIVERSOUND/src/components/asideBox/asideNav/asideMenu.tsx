@@ -9,12 +9,12 @@ const AsideMenu: FunctionComponent = () => {
             <ul className={styles.nav_ul}>
                 <li>
                     <Link to="/songpage" className={styles.nav_link}>
-                        <i className="fa-solid fa-house-crack"></i> Home
+                        <i className="fa-solid fa-house-crack"></i> <p>Home</p>
                     </Link>
                 </li>
                  <li>
                     <Link to="/likePage" className={styles.nav_link}>
-                        <i className="fa-regular fa-bookmark"></i> Like
+                        <i className="fa-regular fa-bookmark"></i> <p>Music List</p>
                     </Link>
                 </li>
                 {/*<li>
