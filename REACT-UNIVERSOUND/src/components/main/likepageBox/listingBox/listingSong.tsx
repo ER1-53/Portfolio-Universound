@@ -10,16 +10,18 @@ type Props = {
 const ListingSong: FunctionComponent<Props> = ({song}) => {
 
     return (
-        <ul className={styles.likelist}>
-            <li className={styles.elementlist}>
-                <img className={styles.likepics} src={song.metadata.coverArtSrc} alt="dj" />
+        <table className={styles.likelist}>
+            <tbody>
+            <tr className={styles.elementlist}>
+                <td><img className={styles.likepics} src={song.metadata.coverArtSrc} alt="dj" /></td>
+                <td>
                 <p><strong>Titre : </strong>{song.metadata.title}</p>
                 <p><strong>Auteur : </strong>{song.metadata.artist}</p>
                 <p><strong>Album : </strong>{song.metadata.album}</p>
-                {/* <div className={styles.boxajout + " " + styles.croix}></div>
-                <div className={styles.boxajout + " " + styles.coeur}></div> */}
-            </li>
-        </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     )
 }
 

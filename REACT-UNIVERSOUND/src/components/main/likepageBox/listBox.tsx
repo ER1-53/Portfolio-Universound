@@ -19,12 +19,14 @@ const ListBox: FunctionComponent = () => {
 
 
     return (
-        <div>
+        <div className={styles.sectionBox}>
             <section className={styles.selection}>
-                <h2>Liked Music</h2>
+                <h2>List</h2>
+                <div className={styles.tables}>
                 {songs.map(song => (
                 <ListingSong key={song.id} song={song} />
                 ))}
+                </div>
             </section>
             </div>
 

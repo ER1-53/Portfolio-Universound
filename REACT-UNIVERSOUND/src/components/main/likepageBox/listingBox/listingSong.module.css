@@ -2,6 +2,7 @@
 	border-radius: 10px;
 	width: 75px;
 	height: 75px;
+	margin-right: 20px;
 }
 
 .elementlist{
@@ -29,26 +30,26 @@ border-radius: 50%;
 
 .croix{
 	margin-left: 40px;
-	
+
 	background-size: contain;
 	background-image: url(../../../../images/playlist_add_circle_FILL0_wght400_GRAD0_opsz24.png);
 }
 
 .coeur{
-	
+
 	background-size: contain;
 	background-image: url(../../../../images/heart_minus_FILL0_wght400_GRAD0_opsz24.png);
 
 }
 
 .croix:hover{
-	
+
 	background-size: contain;
 	background-image: url(../../../../images/playlist_add_check_circle_FILL0_wght400_GRAD0_opsz24.png);
 }
 
 .coeur:hover{
-	
+
 	background-size: contain;
 	background-image: url(../../../../images/relax_FILL0_wght400_GRAD0_opsz24.png);
 
