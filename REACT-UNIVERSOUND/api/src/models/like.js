@@ -2,6 +2,11 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   const like = sequelize.define('like', {
+      like_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+      },
     UserId: {
       type: DataTypes.INTEGER,
       references: {
