@@ -1,7 +1,6 @@
 
 ![Logo-UniverSound](https://i.ibb.co/Tw3wKD4/logov2-Trans.png)
 
-
 ## Table of Content
 
 - Presentation
@@ -9,7 +8,7 @@
 - Architecture
 - Installation and Use
 - Authors
-- License 
+- License
 
 
 # UniverSound: Your Personalized Musical Universe
@@ -27,7 +26,7 @@ UniverSound goes beyond being a mere music streaming platform. It's a space wher
 
 Our platform boasts a sleek and easy-to-navigate interface, ensuring that users of all levels can quickly find and enjoy their preferred music without hassle.
 
-#### *User and Account Management:* 
+#### *User and Account Management:*
 
 With UniverSound, managing your account and personal preferences is effortless. Easily create or modify,  your account, and customize your listening experience to suit your individual preferences.
 
@@ -45,7 +44,7 @@ Complete Personalization: UniverSound adapts to your musical tastes like a secon
 ## Architecture
 
  The architecture of this project is based on the following technologies:
- 
+
 - React for the front-end,
 
 
@@ -59,7 +58,7 @@ to launch react from the development environment
 ```bash
 npm start
 ```
-to launch API rest on the folder /api 
+to launch API rest on the folder /api
 ```bash
 npm run dev
 ```
@@ -70,10 +69,11 @@ npm run dev
 
 [Erwan Cremey](https://www.linkedin.com/in/cremey-erwan-b2b014256/)
 
-[Gaël Deschamps](https://www.linkedin.com/in/gdeschampsdev/) 
+[Gaël Deschamps](https://www.linkedin.com/in/gdeschampsdev/)
 
  #C21 Holberton School Laval
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+![Landing Page](https://universound-144320553.hubspotpagebuilder.eu/universound-landing-page)
