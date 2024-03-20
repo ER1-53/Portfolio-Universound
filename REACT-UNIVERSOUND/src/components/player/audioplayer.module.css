@@ -23,4 +23,9 @@
 	background-image: url(../../images/heart_plus_FILL0_wght400_GRAD0_opsz24.png);
 }
 
-
+@media only screen and (max-width: 500px) {
+  .playBox {
+		flex-direction: column;
+		min-width: 0px;
+	}
+}

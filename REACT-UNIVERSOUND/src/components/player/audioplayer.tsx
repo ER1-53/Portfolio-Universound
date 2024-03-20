@@ -108,7 +108,7 @@ const AudioPlayer = () => {
         isPlaying={playbackState === 'PLAYING'}
       />
       </div>
-      <div>
+      <div className={styles.progressbar}>
       <ProgressBar
         rightLabel={formatTime(currentTrackDuration)}
         leftLabel={formatTime(currentTrackPlaybackPosition)}

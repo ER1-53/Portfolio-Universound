@@ -56,3 +56,13 @@ margin-bottom: 20px;
 	width: 50px;
 	height: 50px;
 }
+
+/* responsive mode */
+@media only screen and (max-width: 500px) {
+  .soundsearch {
+		width: 200px;
+	}
+	.soundsearch input{
+		width: 100%;
+	}
+}

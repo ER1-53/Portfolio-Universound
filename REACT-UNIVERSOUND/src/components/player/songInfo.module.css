@@ -25,3 +25,11 @@
 	from {transform: rotate(0);}
 	to {transform: rotate(360deg);}
 }
+
+@media only screen and (max-width: 500px) {
+  .boxInfoSong {
+		margin-bottom: 20px;
+		height: 50px;
+		text-align: center;
+	}
+}

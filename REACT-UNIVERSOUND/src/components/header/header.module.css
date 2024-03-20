@@ -33,3 +33,12 @@
 .nav_profil_ul li:hover{
     color: var(--neon-blue);
 }
+
+@media only screen and (max-width: 500px) {
+    .nav_profil ul {
+        flex-wrap: wrap;
+    }
+    .username {
+        margin-top: 20px;
+    }
+  }

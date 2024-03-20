@@ -39,9 +39,9 @@ const SearchBar: FunctionComponent = () => {
     };
 
     return (
-        <div id="soundSearch">
+        <div id="soundSearch" className={styles.soundsearch}>
         <form>
-            <input placeholder="Rechercher une musique"  className={styles.styledSearch + " " +styles.searchField} id="site-search" type="text" value={term} onChange={e => handleInputChange(e)} />
+            <input placeholder="Search song"  className={styles.styledSearch + " " +styles.searchField} id="site-search" type="text" value={term} onChange={e => handleInputChange(e)} />
         </form>
         {!isEmpty(songs) &&
             songs.map((song: Song) => (
