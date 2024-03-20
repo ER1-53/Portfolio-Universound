@@ -60,17 +60,11 @@
 	  inset -2px -2px 3px rgb(255 255 255 / 60%),
 	  inset 2px 2px 3px rgb(0 0 0 / 60%);
   }
+	
   .searchField {
 	width: 20vw;
   }
 
-  .title {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--neon-purple);
-    padding: 1rem;
-	box-shadow: 0 0 10px var(--neon-purple-shadow);
-}
 .fixedSong {
 	position: fixed;
 	z-index: 99;

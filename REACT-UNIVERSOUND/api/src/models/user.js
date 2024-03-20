@@ -20,6 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING
     },
+    resetPasswordToken: {
+      type: DataTypes.STRING
+    },
+    resetPasswordExpires: {
+      type: DataTypes.BIGINT
+    },
     mail: {
       type: DataTypes.STRING,
       unique: {

@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-import { Link } from 'react-router-dom';
 import styles from './header.module.css'
 
 const LogoHeader: FunctionComponent = () => {
@@ -10,5 +9,5 @@ const LogoHeader: FunctionComponent = () => {
             </div>
     );
 };
-          
+
           export default LogoHeader;
