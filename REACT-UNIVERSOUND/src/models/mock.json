@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "audioSrc": "../../song/01-ayo-down_on_my_knees.mp3",
+    "metadata": {
+      "title": "Back",
+      "artist": "DOudou",
+      "coverArtSrc": "../../cover/valante.jpg",
+      "types": ["Rock", "Pop"],
+      "album": "For-ENd"
+    }
+  },
+  {
+    "id": 2,
+    "audioSrc": "../../song/02-amy_macdonald-this_is_the_life.mp3",
+    "metadata": {
+      "album": "miche",
+      "artist": "DOudou",
+      "coverArtSrc": "../../cover/Dark Utopia.jpg",
+      "types": ["Rap"],
+      "title": "Bazock"
+    }
+  }
+]

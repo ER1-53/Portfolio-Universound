@@ -1,39 +1,61 @@
-import React, { FunctionComponent, useState } from 'react';
-import axios from 'axios';
-import styles from './search.module.css'
-// supprime le commentaire est creer le lien avec la req search spotify
+import React, { FunctionComponent, useContext, useState } from 'react';
+import Song from '../../../models/song';
+import SongService from '../../../service/song_service';
+import styles from './search.module.css';
+import HistoricService from '../../../service/historic_service';
+import { useSelector, RootStateOrAny } from 'react-redux';
+import { isEmpty } from '../../../service/isEmpty';
+import { RefreshContext } from '../../../service/refresh';
+
 
 const SearchBar: FunctionComponent = () => {
-    const [search, setSearch] = useState('');
-    const [results, setResults] = useState([]);
 
-    const SearchSong = async () => {
-        const response = await axios.get(
-            `https://api.spotify.com/v1/search?q=${search}&type=track`,
-            {
-                headers: {
-                  'Authorization': 'Bearer ' //+ votreToken
-                }
-              });
-          
-              setResults(response.data.tracks.items);
-            };
+    const [term, setTerm] = useState<string>('');
+    const [songs, setSongs] = useState<Song[]>([]);
+    const user = useSelector((State: RootStateOrAny) => State.user.user);
+    const { setRefresh } = useContext(RefreshContext);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        const term = e.target.value;
+        setTerm(term);
+
+        if(term.length <= 1) {
+            setSongs([]);
+            return;
+        }
+        SongService.searchSong(term).then(songs => setSongs(songs));
+    }
+
+    const handleSongClick = (song: Song): void => {
+
+        console.log(`dans handlesong ${user.id} ${song.id}`)
+        HistoricService.addUserSong(user.id, song.id)
+        .then(() => {
+            console.log('historique ajouté');
+            setRefresh(true);
+            setRefresh(false);
+          })
+            .catch((error) => console.error(error));
+    };
 
     return (
         <div id="soundSearch">
         <form>
-            <input className={styles.styledSearch + " " +styles.searchField} id="site-search" type="search" value={search} onChange={e => setSearch(e.target.value)} />
-            <button className={styles.styledSearch} onClick={SearchSong}>Rechercher</button>
+            <input placeholder="Rechercher une musique"  className={styles.styledSearch + " " +styles.searchField} id="site-search" type="text" value={term} onChange={e => handleInputChange(e)} />
         </form>
-        {/*{results.map(track => (
-            <div key={track.id}>
-            <img src={track.album.images[0].url} alt="album cover" />
-            <p>{track.name} par {track.artists[0].name}</p>
-            </div>
-        ))}*/}
+        {!isEmpty(songs) &&
+            songs.map((song: Song) => (
+                <div onClick={() => handleSongClick(song)} className={styles.songbox} key={song.id}>
+                <img className={styles.cover} src={song.metadata.coverArtSrc} alt="album cover" />
+                <div className={styles.box}>
+                    <h3>{song.metadata.title}</h3>
+                    <h4>{song.metadata.artist}</h4>
+                </div>
+                </div>
+        ))}
         </div>
     );
 };
 
 
-export default SearchBar; 
+export default SearchBar;

@@ -73,7 +73,16 @@ h2 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+}
+.signLink {
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    text-align: center;
+    margin-top: 3px;
+}
+.signLink:hover {
+    color: rgb(133, 89, 133);
 }
 .g-signin2 {
     display: inline-block;

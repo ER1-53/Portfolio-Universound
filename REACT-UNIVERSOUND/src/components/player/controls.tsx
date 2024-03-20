@@ -9,6 +9,7 @@ import repeatButtonDisabledIcon from '../../assets/icons/ic_repeat_disabled.svg'
 import React from 'react';
 import styles from './controls.module.css'
 
+// Interface for the Controls component props
 type ControlsProps = {
   onPlayClick: () => void;
   onPrevClick: () => void;
@@ -20,6 +21,7 @@ type ControlsProps = {
   shuffle: boolean;
 };
 
+// Controls component that renders playback controls
 const Controls = ({
   onPlayClick,
   isPlaying,
@@ -38,7 +40,7 @@ const Controls = ({
       />
       <ImageButton src={prevButtonIcon} onClick={onPrevClick} />
       <ImageButton
-        
+
         src={isPlaying ? pauseButtonIcon : playButtonIcon}
         onClick={onPlayClick}
       />
@@ -53,12 +55,14 @@ const Controls = ({
 
 export default Controls;
 
+// Interface for the ImageButton component props
 type ImageButtonProps = {
   src: string;
   onClick: () => void;
   className?: string;
 };
 
+// Reusable image button component
 const ImageButton = ({ onClick, src, className }: ImageButtonProps) => {
   const buttonSize = 20;
   return (
