@@ -1,12 +1,11 @@
 import axios from "axios";
 import { resolve } from "path";
-import { useState } from "react";
 
 
 export default class AuthService {
-
     static isAuthenticated: boolean = false;
 
+    // Method for user login
     static login(username: string, password: string): Promise<boolean> {
 
         return new Promise((resolve, reject) => {
@@ -37,6 +36,7 @@ export default class AuthService {
           });
         }
 
+    // Method to retrieve user information (ID and username)
     static async UserIdInfo(username: string, password: string): Promise< { id: number, username: string } | undefined> {
       try {
         const response = await axios.post(
@@ -50,12 +50,12 @@ export default class AuthService {
           return response.data.data;
         }
 
-        // Implicitly handle cases where response.data is false or undefined
-        return undefined;
+      // Handle other cases here if needed
       } catch (error) {
         console.error(`Erreur lors de l'authentification : ${error}`);
-        throw error; // Re-throw for handling at call site
+        throw error;
       }
+      return undefined;
     }
 
     static leftSession(): void {

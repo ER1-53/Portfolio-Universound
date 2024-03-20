@@ -1,3 +1,4 @@
+// Check if a value is empty (undefined, null, or has no content)
 export const isEmpty = (value) => {
   return (
     value === undefined ||

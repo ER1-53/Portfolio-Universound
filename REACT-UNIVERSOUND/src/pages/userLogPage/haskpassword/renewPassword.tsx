@@ -4,13 +4,14 @@ import styles from './renewPassword.module.css'
 import { Link } from 'react-router-dom';
 import UserService from '../../../service/user_service';
 
-
+// Interface defining the structure of a form field
 type Field = {
   value?: any,
   error?: string,
   isValid?: Boolean
 }
 
+// Interface defining the structure of new password information
 type NewPassInfos = {
   mail: Field,
   password: Field,
@@ -18,26 +19,30 @@ type NewPassInfos = {
 
 const RenewPassPage: FunctionComponent = () => {
 
-
-
+  // State variable to store new password information
   const [newPassInfos, setLoginInfos] = useState<NewPassInfos>({
     mail: {value: '' },
     password: {value: '' }
   });
 
+  // State variable to store a message for the user
   const [message, setMessage] = useState<String>('')
 
+  // Function to handle changes in form input fields
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
     const fieldValue: string = e.target.value;
     const newField: Field = { [fieldName]: { value: fieldValue } };
 
+    // Update newPassInfos state with the changed field
     setLoginInfos({ ...newPassInfos, ...newField});
   }
 
+  // Function to validate the form
   const validateForm = () => {
     let tempNewPassInfos: NewPassInfos = newPassInfos;
 
+    // Validate email field
     if (newPassInfos.mail.value.length < 3) {
       const errorMsg: string = 'Votre identifiant doit faire au moins 3 caractères de long.'
       const newField: Field = {value: newPassInfos.mail.value, error: errorMsg, isValid: false}
@@ -47,6 +52,7 @@ const RenewPassPage: FunctionComponent = () => {
       tempNewPassInfos = { ...tempNewPassInfos, ...{mail: newField}}
      }
 
+     // Validate password field
      if (newPassInfos.password.value.length < 4) {
       const errorMsg: string = 'Votre mot de passe doit faire au moins 6 caractères de long.'
       const newField: Field = {value: newPassInfos.password.value, error: errorMsg, isValid: false}
@@ -56,11 +62,14 @@ const RenewPassPage: FunctionComponent = () => {
       tempNewPassInfos = { ...tempNewPassInfos, ...{password: newField}}
      }
 
+     // Update newPassInfos state with validation results
      setLoginInfos(tempNewPassInfos);
 
+     // Return true if both email and password are valid
      return tempNewPassInfos.mail.isValid && tempNewPassInfos.password.isValid;
   }
 
+  // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const isFormValid = validateForm();
@@ -68,6 +77,7 @@ const RenewPassPage: FunctionComponent = () => {
       setMessage('Envoi de la demande.');
       try {
 
+        // Call user service to change password
         const newpass = await UserService.ChangePassword(newPassInfos.mail.value, newPassInfos.password.value)
         if(newpass){
           setMessage('Modification du mot de passe effectuée.')

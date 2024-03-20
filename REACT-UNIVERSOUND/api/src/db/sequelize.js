@@ -9,16 +9,18 @@ const songsData = require('./mock-song')
 const usersData = require('./mock-user')
 const bcrypt = require('bcrypt')
 
-
+// Define Sequelize instance based on environment
 let sequelize
 
 if(process.env.NODE_ENV === 'production'){
+  // Production environment configuration
   sequelize = new Sequelize('universoundDB', 'universound', 'universoundHolberton', {
     host: 'localhost',
     dialect: 'mysql',
     logging: true,
   })
 } else {
+  // Development environment configuration
   sequelize = new Sequelize('universoundDB', 'universound', 'universoundHolberton', {
     host: 'localhost',
     dialect: 'mysql',
@@ -26,25 +28,33 @@ if(process.env.NODE_ENV === 'production'){
   })
 }
 
+// Define Sequelize models for Song, User, Historic, and Like
 const Song = SongModel(sequelize, DataTypes)
 const User = UserModel(sequelize, DataTypes)
 const Historic = HistoricModel(sequelize, DataTypes)
 const Like = LikeModel(sequelize, DataTypes)
 
+// Define many-to-many relationships between models
 User.belongsToMany(Song, { through: Historic, foreignKey: 'UserId' });
 Song.belongsToMany(User, { through: Historic, foreignKey: 'SongId' });
 
 User.belongsToMany(Song, { through: Like, foreignKey: 'UserId' });
 Song.belongsToMany(User, { through: Like, foreignKey: 'SongId' });
 
+// Function to initialize the database
 const initDB = async () => {
 
+  // Synchronize database schema with models (create tables if necessary)
   await sequelize.sync();
 
+  // Check if tables are empty
   const count = await Song.count();
   const countUser = await User.count();
 
   if(count === 0 && countUser === 0) {
+    // If tables are empty, populate them with mock data
+
+    // Create songs from mock data
     await Promise.all(songsData.map(songData => {
       Song.create({
         audioSrc: songData.audioSrc,
@@ -60,6 +70,7 @@ const initDB = async () => {
       .catch(error => console.error(error));
     }));
 
+    // Create users from mock data with hashed passwords
     await Promise.all(usersData.map(async userData => {
       const hashedPassword = await bcrypt.hash(userData.password, 10);
 
@@ -76,6 +87,7 @@ const initDB = async () => {
       .catch(error => console.error('Erreur lors de la création de l\'utilisateur :', error));
     }));
 
+    // Create historic entries from mock data
     historicData.map(historicData => {
       Historic.create ({
         UserId: historicData.UserId,
@@ -86,6 +98,7 @@ const initDB = async () => {
       .catch(error => console.error('Erreur lors de la création de Historic', error))
       });
 
+      // Create like entries from mock data (assuming similar structure as historic)
       likesData.map(likesData => {
         Like.create ({
           UserId: likesData.UserId,

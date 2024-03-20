@@ -1,44 +1,46 @@
 import React, { FunctionComponent, useState } from 'react';
-import { GoogleLoginButton } from 'react-social-login-buttons';
-import { LoginSocialGoogle, IResolveParams  } from 'reactjs-social-login';
+/* import { GoogleLoginButton } from 'react-social-login-buttons';
+import { LoginSocialGoogle, IResolveParams  } from 'reactjs-social-login'; */
 import LogoHeader from '../../../components/header/logoheader';
 import styles from './login.module.css';
 import { useHistory, Link } from 'react-router-dom';
 import AuthService from '../../../service/authentification-service';
 import {  useDispatch } from 'react-redux';
 
-
+// Defining the types for the fields
 type Field = {
   value?: any,
   error?: string,
   isValid?: Boolean
 }
 
+// Defining the types for the login information
 type LoginInfos = {
   username: Field,
   password: Field,
 }
 
+// LoginPage component
 const LoginPage: FunctionComponent = () => {
 
-
+  // Defining the state variables and hooks
   const history = useHistory()
-  /* const infoUserId = useSelector(state => state) */
   const dispatch = useDispatch();
   const [message, setMessage] = useState<String>('')
 
   // recuperation des inforamtions pour le social login
-  const onSignIn = (params: IResolveParams) => {
+  /* const onSignIn = (params: IResolveParams) => {
     if (params.provider && params.data) {
       console.log(params.provider, params.data);
     }
-  };
+  }; */
 
   const [loginInfos, setLoginInfos] = useState<LoginInfos>({
     username: {value: '' },
     password: {value: '' }
   });
 
+  // Function to handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
     const fieldValue: string = e.target.value;
@@ -47,9 +49,11 @@ const LoginPage: FunctionComponent = () => {
     setLoginInfos({ ...loginInfos, ...newField});
   }
 
+  // Function to validate the form
   const validateForm = () => {
     let newLoginInfos: LoginInfos = loginInfos;
 
+    // Validating the username
     if (loginInfos.username.value.length < 3) {
       const errorMsg: string = 'Votre identifiant doit faire au moins 3 caractères de long.'
       const newField: Field = {value: loginInfos.username.value, error: errorMsg, isValid: false}
@@ -59,6 +63,7 @@ const LoginPage: FunctionComponent = () => {
       newLoginInfos = { ...newLoginInfos, ...{username: newField}}
      }
 
+     // Validating the password
      if (loginInfos.password.value.length < 4) {
       const errorMsg: string = 'Votre mot de passe doit faire au moins 4 caractères de long.'
       const newField: Field = {value: loginInfos.password.value, error: errorMsg, isValid: false}
@@ -73,6 +78,7 @@ const LoginPage: FunctionComponent = () => {
      return newLoginInfos.username.isValid && newLoginInfos.password.isValid;
   }
 
+  // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const isFormValid = validateForm();
@@ -86,7 +92,6 @@ const LoginPage: FunctionComponent = () => {
             return;
           } else {
           const user = await AuthService.UserIdInfo(loginInfos.username.value, loginInfos.password.value);
-          console.log(typeof(user))
           if(user){
             dispatch({
               type: "user/sendUser",
@@ -104,7 +109,7 @@ const LoginPage: FunctionComponent = () => {
 
 
 
-  // page Initiale
+  // Rendering the LoginPage component
   return (
     <div>
       <div className={styles.title}>
@@ -148,7 +153,7 @@ const LoginPage: FunctionComponent = () => {
               <Link to='/signup'>Créer un compte !</Link>
           </form>
 
-          <LoginSocialGoogle
+          {/* <LoginSocialGoogle
             client_id="368574400224-oj4fctha2pfjqg0m5h0p99u7kjaluuad.apps.googleusercontent.com"
             scope="openid profile email"
             discoveryDocs="claims_supported"
@@ -158,7 +163,7 @@ const LoginPage: FunctionComponent = () => {
               console.log(err);
             }}>
             <GoogleLoginButton />
-          </LoginSocialGoogle>
+          </LoginSocialGoogle> */}
         </main>
       </div>
     </div>

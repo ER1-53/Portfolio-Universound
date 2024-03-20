@@ -1,8 +1,10 @@
 import axios from 'axios';
 import SongService from './song_service';
 
+// UserService class
 export default class UserService {
 
+  // Method to request a password reset
   static async RequestPasswordReset(mail: string): Promise<string | void> {
     try {
       const res = await axios.post(
@@ -17,6 +19,7 @@ export default class UserService {
     }
   }
 
+  // Method to change the password
   static async ChangePassword(mail: string, password: string): Promise<Boolean> {
     try {
       const userResponse = await axios.get(`http://localhost:4001/api/users/${mail}`);
@@ -37,6 +40,7 @@ export default class UserService {
     }
   }
 
+  // Method to create a new user
   static async createUser(lastname: string, firstname: string, username: string, password: string, mail: string ): Promise<void> {
     try {
       const res = await axios.post('http://localhost:4001/api/users',
@@ -49,6 +53,7 @@ export default class UserService {
     }
   }
 
+  // Method to find all users
   static async findAllUser() {
     const token = await SongService.upTokenByCookie();
     try {
@@ -62,6 +67,7 @@ export default class UserService {
     }
   }
 
+  // Method to delete a user
   static async deleteUser(userId: string) {
     const token = await SongService.upTokenByCookie();
     try {

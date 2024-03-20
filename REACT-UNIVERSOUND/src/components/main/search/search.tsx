@@ -23,7 +23,6 @@ const SearchBar: FunctionComponent = () => {
             setSongs([]);
             return;
         }
-
         SongService.searchSong(term).then(songs => setSongs(songs));
     }
 
@@ -37,7 +36,7 @@ const SearchBar: FunctionComponent = () => {
             setRefresh(false);
           })
             .catch((error) => console.error(error));
-    }
+    };
 
     return (
         <div id="soundSearch">

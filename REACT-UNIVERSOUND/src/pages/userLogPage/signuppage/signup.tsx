@@ -1,15 +1,17 @@
 import React, { FunctionComponent, useState } from 'react';
 import LogoHeader from '../../../components/header/logoheader';
-import { GoogleLoginButton } from 'react-social-login-buttons';
-import { LoginSocialGoogle, IResolveParams } from 'reactjs-social-login';
+/* import { GoogleLoginButton } from 'react-social-login-buttons';
+import { LoginSocialGoogle, IResolveParams } from 'reactjs-social-login'; */
 import styles from './signup.module.css'
 import { Link } from 'react-router-dom';
 import UserService from '../../../service/user_service';
 
+// Defining the props for the sugnUp component
 interface SignupProps {
   handleSignup: (username: string, password: string, email: string, fistname: string, lastname: string) => void;
 }
 
+//SignUp component
 const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +22,7 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
   const [message, setMessage] = useState<String>('');
   const [formSubmit, setFormSubmit] = useState<Boolean>(false);
 
+  // Function to handle form submission
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     if (password !== confirmPassword) {
@@ -34,12 +37,14 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
     }
   };
 
-  const onSignIn = (params: IResolveParams) => {
+  //add for google connect
+  /* const onSignIn = (params: IResolveParams) => {
     if (params.provider && params.data) {
       console.log(params.provider, params.data);
     }
-  };
+  }; */
 
+  // Rendering the SignUp component
   return (
     <div className={styles.FullPage}>
       <div className={styles.title}>
@@ -84,7 +89,7 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
               <button type="submit">créer un compte</button>
               </div>
             </form>
-            <LoginSocialGoogle
+            {/* <LoginSocialGoogle
                 client_id="368574400224-oj4fctha2pfjqg0m5h0p99u7kjaluuad.apps.googleusercontent.com"
                 scope="openid profile email"
                 discoveryDocs="claims_supported"
@@ -95,7 +100,7 @@ const SignUp: FunctionComponent<SignupProps> = ({ handleSignup }) => {
                 }}
               >
                 <GoogleLoginButton />
-              </LoginSocialGoogle>
+              </LoginSocialGoogle> */}
           </div>
               )}
             </div>

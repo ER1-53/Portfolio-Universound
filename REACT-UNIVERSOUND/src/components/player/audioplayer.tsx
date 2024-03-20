@@ -9,20 +9,28 @@ import Song from "../../models/song";
 import { RootStateOrAny, useSelector } from 'react-redux';
 
 const AudioPlayer = () => {
+  // State to store the list of songs
   const [songs, setSongs] = useState<Song[]>([]);
+  // Get song ID and user data from Redux store
   const songId = useSelector((state: RootStateOrAny) => state.song.song.id)
   const user = useSelector((state: RootStateOrAny) => state.user.user);
 
+  // Effect hook to fetch songs on component mount or song/user data change
   useEffect(() => {
     const loadData = async () => {
       try {
+        // Fetch song list based on username and user ID
         const songs = await SongService.fetchSongList(user.username, user.id);
+        // Check if a specific song ID is provided
         if (songId !== undefined) {
+          // Find the song object matching the song ID
           const song = songs.find(song => song.id === songId);
           if (song) {
+            // Set the songs state to an array containing only the matched song
             setSongs([song]);
           }
         } else {
+          // If no specific song ID, set the songs state to the entire list
           setSongs(songs);
         }
       } catch (error) {
@@ -32,6 +40,7 @@ const AudioPlayer = () => {
     loadData();
   }, [songId]);
 
+  // Destructure functions and state from the useAudioPlayer hook
   const {
     playNextTrack,
     playPreviousTrack,
@@ -42,6 +51,7 @@ const AudioPlayer = () => {
     setPlaybackPosition,
   } = useAudioPlayer(songs);/* useAudioPlayer(SONGS); */
 
+  // Destructure individual player state properties
   const {
     repeat,
     playbackState,
@@ -51,14 +61,17 @@ const AudioPlayer = () => {
     currentTrackMetadata,
   } = playerState;
 
+  // Function to handle progress bar changes (updates playback position)
   function setProgress(value: number) {
     if (currentTrackDuration !== null) {
+      // Calculate the new playback position based on the progress bar value
       setPlaybackPosition((value / 100) * currentTrackDuration);
     }
   }
 
+  // Function to calculate the current progress as a percentage
   function computeProgress(): number {
-    // Ensure both values are numbers or null
+    // Handle cases where values might be null
     const safeCurrentTrackPlaybackPosition = currentTrackPlaybackPosition === null ? 0 : currentTrackPlaybackPosition;
     const safeCurrentTrackDuration = currentTrackDuration === null ? 1 : currentTrackDuration; // Use 1 to avoid division by zero
 
@@ -70,6 +83,7 @@ const AudioPlayer = () => {
     }
   }
 
+  // Helper function to determine if the audio is currently playing
   const isPlaying = playbackState === 'PLAYING';
 
   return (

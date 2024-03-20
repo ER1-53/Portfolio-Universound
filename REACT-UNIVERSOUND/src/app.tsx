@@ -16,15 +16,19 @@ const App = () => {
   return (
     <Router>
             <Switch>
+              {/* Landing page */}
                 <Route exact path="/" component={LandingPage}/>
+              {/* Private routes */}
                 <PrivateRoute path="/songpage" component={SoundPage}/>
+                <PrivateRoute path="/likePage" component={LikePage}/>
+                <PrivateRoute path="/playlist" component={Playlist}/>
+              {/* Public routes */}
                 <Route path="/signup" component={SignUp}/>
                 <Route path="/renewPage" component={RenewHaskPage}/>
                 <Route path="/login" component={LoginPage}/>
                 <Route path="/newSong" component={UpSong}/>
-                <PrivateRoute path="/likePage" component={LikePage}/>
-                <PrivateRoute path="/playlist" component={Playlist}/>
                 <Route path="/renewPassPage/:token" component={RenewPassPage}/>
+              {/* 404 page */}
                 <Route component={PageNotFound}/>
             </Switch>
     </Router>
