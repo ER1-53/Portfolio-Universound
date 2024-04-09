@@ -1,0 +1,108 @@
+﻿Name,Assign,Date,Files & media,Status,Text,source 1,source 2
+Sequelize,"cremey erwan, gael deschamps",25 janvier 2024,,Tested,"What’s Sequelize & ORM ?
+installation
+data models
+ES6 with models
+get / update / delete
+
+",https://www.youtube.com/watch?v=NRxzvpdduvQ&t=4535s,https://numa-bord.com/miniblog/nodejs-exemples-dutilisation-avec-lorm-sequelize/
+Redux,"cremey erwan, gael deschamps",19 janvier 2024,,Dev Complete,"What’s Redux?
+ES6
+State
+store redux
+action redux
+asynchrone redux",https://www.ibrahima-ndaw.com/fr/blog/7-steps-to-understand-react-redux/,
+JS,"cremey erwan, gael deschamps",15 janvier 2024 → 17 janvier 2024,,Dev Complete,"What’s JS ?
+var, str, int, bool, array, object
+comments
+operator & conditional structures
+Loops
+Functions
+DOM
+EVENTS",,
+React,"cremey erwan, gael deschamps",18 janvier 2024 → 19 janvier 2024,,Dev Complete,"What’s REACT ?
+installation
+logic of react
+JSX, JSON
+Style & Assets
+List & conditions
+State
+props
+Hooks",https://www.youtube.com/playlist?list=PLh0hhLbBgpHuWIm6BzD4gt-ce0GkDWsrD,https://fr.legacy.reactjs.org/
+Node / Express,"cremey erwan, gael deschamps",22 janvier 2024 → 24 janvier 2024,,Dev Complete,"What’s Node ?
+installation
+Require
+API asynch
+Route
+middleware / intergiciel
+Static
+erreur
+with DBs",https://www.youtube.com/watch?v=NRxzvpdduvQ&t=4535s,https://developer.mozilla.org/fr/docs/Learn/Server-side/Express_Nodejs/Introduction
+Domain Name,cremey erwan,18 janvier 2024 → 19 janvier 2024,,Dev Complete,The name of domain is https://universound.fr,https://www.noip.com/,https://promo.amen.fr/nom-de-domaine-et-site-web-a-095-e-la-1ere-annee/?idl=6151debcac4ed849136fab73&idv=5a85911d8b086200492b84b7&idc=5a8593448b0862007d2b176a&PR=EG0&ida=621f8a3d8d5655cb7e460936&gclid=Cj0KCQiAtOmsBhCnARIsAGPa5yYJcVQ2G7UwVDsQOou1KUQGVbi2nJagMvN0rDpF9vEX0hFbrO5WYPcaAqQTEALw_wcB
+local database,"gael deschamps, cremey erwan",22 janvier 2024 → 23 janvier 2024,,Dev Complete,,,
+database server,"gael deschamps, cremey erwan",22 janvier 2024 → 23 janvier 2024,,deployed,,https://www.hostinger.fr/?ppc_campaign=google_search_brand&bidkw=hostinger&gad_source=1&gclid=Cj0KCQiAtOmsBhCnARIsAGPa5yZLHJiwg72lZUcCWY7I06Ftjugx9bEjOSjSLC4Uv4fA82vbgBsabxUaAmk5EALw_wcB,
+working branch,"cremey erwan, gael deschamps",20 janvier 2024 → 21 janvier 2024,,deployed,,https://git-scm.com/book/fr/v2/Commandes-Git-Cr%C3%A9ation-de-branches-et-fusion,
+test branch,"cremey erwan, gael deschamps",20 janvier 2024 → 21 janvier 2024,,In Progress,,https://jestjs.io/fr/docs/getting-started,https://grafikart.fr/tutoriels/jest-test-framework-1202
+"install the app, package, server dependency","cremey erwan, gael deschamps",25 janvier 2024 → 26 janvier 2024,,Dev Complete,,https://openclassrooms.com/fr/courses/1733141-construisez-le-pack-d-installation-des-logiciels-de-vos-collaborateurs/5701914-automatisez-vos-installations,https://docs.jelix.org/fr/manuel/configurateur-installateur/creer-script-installation
+"install the app, package, local dependency","gael deschamps, cremey erwan",25 janvier 2024 → 26 janvier 2024,,deployed,,https://www.mamp.info/en/downloads/,https://www.apachefriends.org/fr/index.html
+" app REACT Creation ","cremey erwan, gael deschamps",28 janvier 2024 → 31 janvier 2024,,Dev Complete,,,
+1.Loading page module Creation,gael deschamps,28 janvier 2024 → 31 janvier 2024,loadingpage.png,In Progress,,,
+Creation of the asynchronous web app download system,gael deschamps,28 janvier 2024 → 31 janvier 2024,,In Progress,,,
+a_ Integration of html and css into react,gael deschamps,28 janvier 2024 → 31 janvier 2024,,Dev Complete,,,
+b_Logo integration,gael deschamps,28 janvier 2024 → 31 janvier 2024,,Dev Complete,,,
+c_Add HeartBeat sound,gael deschamps,28 janvier 2024 → 31 janvier 2024,,In Progress,,,
+2. welcome Page module creation,"cremey erwan, gael deschamps",1 février 2024 → 7 février 2024,welcomepage.png,Dev Complete,,,
+— Header module creation,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+a_  integration html/ css into  react,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+b_Logo integration,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+c_creation of login links,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+d_creation of Profil links,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+— Aside module creation,gael deschamps,1 février 2024 → 7 février 2024,,Dev Complete,,,
+a_  integration html/ css into  react,gael deschamps,1 février 2024 → 7 février 2024,,Dev Complete,,,
+b_ anticipate a block for chat/group (step2),gael deschamps,1 février 2024 → 7 février 2024,,Dev Complete,,,
+—Nav module creation,gael deschamps,1 février 2024 → 7 février 2024,,Dev Complete,,,
+a_ integration html/ css into  react,gael deschamps,1 février 2024 → 7 février 2024,,Dev Complete,,,
+"b_ Home, Library, PLaylist : links creation",gael deschamps,1 février 2024 → 7 février 2024,,Dev Complete,,,
+— Main module creation,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+a_ integration html/ css into  react,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+— footer module creation,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+a_ integration html/ css into  react,cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+"b- creation of 4 block: History, Style, Lyrics, rhythm",cremey erwan,1 février 2024 → 7 février 2024,,Dev Complete,,,
+3. Sound module page creation,"cremey erwan, gael deschamps",7 février 2024 → 9 février 2024,soundpage.png,Dev Complete,,,
+— Main module creation,"cremey erwan, gael deschamps",7 février 2024 → 9 février 2024,,Dev Complete,,,
+a_ integration html/ css into  react,"cremey erwan, gael deschamps",7 février 2024 → 9 février 2024,,Dev Complete,,,
+b_cover/launcher block creation,"cremey erwan, gael deschamps",7 février 2024 → 9 février 2024,,Dev Complete,,,
+4. Login page module creation,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,login%201.png,Dev Complete,,,
+a_ integration html/ css into  react,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,Dev Complete,,,
+b_  user/e-mail field integration,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,Dev Complete,,,
+c_  password field integration,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,Dev Complete,,,
+d_  remember me field integration,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,In Progress,,,
+e_  connect field integration,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,In Progress,,,
+f_ “lost password”  field integration,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,In Progress,,,
+g_ google & facebook api integration,"cremey erwan, gael deschamps",18 février 2024 → 23 février 2024,,In Progress,,,
+5.signUp page module creation,"cremey erwan, gael deschamps",25 février 2024 → 29 février 2024,signup.PNG.png,In Progress,,,
+a_ integration html/ css into  react,"cremey erwan, gael deschamps",25 février 2024 → 29 février 2024,,In Progress,,,
+b_ add “I already have an account” field,"cremey erwan, gael deschamps",25 février 2024 → 29 février 2024,,In Progress,,,
+c_ Intégration  of form,"cremey erwan, gael deschamps",25 février 2024 → 29 février 2024,,In Progress,,,
+d_génération of submit,"cremey erwan, gael deschamps",25 février 2024 → 29 février 2024,,In Progress,,,
+e_integrate cover 1st listening blocks into a mosaic,"cremey erwan, gael deschamps",25 février 2024 → 29 février 2024,,In Progress,,,
+6.player module creation,gael deschamps,25 février 2024 → 28 février 2024,withplayer.PNG.png,In Progress,,,
+e_integrate cover 1st listening blocks into a mosaic,gael deschamps,25 février 2024 → 28 février 2024,,In Progress,,,
+b_intégration of “play/pause/stop/left/right” system,gael deschamps,25 février 2024 → 28 février 2024,,In Progress,,,
+"c_ integration ""elapsed time → bar time → remaining time” system",gael deschamps,25 février 2024 → 28 février 2024,,In Progress,,,
+"d_intégration of “title, track, artist name” system",gael deschamps,25 février 2024 → 28 février 2024,,In Progress,,,
+creation of users/login/signup route lines,"cremey erwan, gael deschamps",29 février 2024 → 7 mars 2024,,In Progress,,,
+creation of historic route lines + query return,"cremey erwan, gael deschamps",29 février 2024 → 7 mars 2024,,In Progress,,,
+creation of playlist route lines + query return,"cremey erwan, gael deschamps",29 février 2024 → 7 mars 2024,,In Progress,,,
+creation of sound page routes,"cremey erwan, gael deschamps",29 février 2024 → 7 mars 2024,,In Progress,,,
+route api token user creation,"cremey erwan, gael deschamps",29 février 2024 → 7 mars 2024,,In Progress,,https://developer.spotify.com/documentation/web-api/tutorials/client-credentials-flow,
+" route api music-search route","cremey erwan, gael deschamps",29 février 2024 → 7 mars 2024,,In Progress,,https://developer.spotify.com/documentation/web-api/tutorials/client-credentials-flow,
+creating databases tables,"gael deschamps, cremey erwan",11 mars 2024 → 15 mars 2024,,In Progress,,,
+creation of Sequelize links to database,"gael deschamps, cremey erwan",11 mars 2024 → 15 mars 2024,,In Progress,,,
+system creation login + request identification token,"gael deschamps, cremey erwan",11 mars 2024 → 15 mars 2024,,In Progress,,,
+creation of the signup system with client_id and client_secret request with spotify,"gael deschamps, cremey erwan",11 mars 2024 → 15 mars 2024,,In Progress,,,
+" Create Presentation","gael deschamps, cremey erwan",15 janvier 2024 → 18 février 2024,,Approved,,,
+Create Project Landing Page,"gael deschamps, cremey erwan",30 janvier 2024 → 2 février 2024,,Approved,creation of the site's home page which presents the product to future potential users. (site promotion page),,
+Write comprehensive README.md,"gael deschamps, cremey erwan",15 janvier 2024 → 10 mars 2024,,Approved,,,
+Make Demo of the Project,"gael deschamps, cremey erwan",,,Approved,,,
+Write Blog post,"gael deschamps, cremey erwan",19 février 2024 → 10 mars 2024,,Approved,,,
